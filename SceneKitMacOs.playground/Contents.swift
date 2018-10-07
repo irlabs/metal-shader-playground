@@ -51,25 +51,43 @@ class GameScene: SCNScene {
         /////
         
         let back = SCNBox(width: 50, height: 50, length: 1, chamferRadius: 0)
+        back.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 0.7, green: 0.7, blue: 0.7, alpha: 1.0)
         let backNode = SCNNode(geometry: back)
         backNode.position = SCNVector3(0,0,0)
         self.rootNode.addChildNode(backNode)
         
+
+        //// Object
+        let object = SCNNode()
         
         let box = SCNBox(width: 10, height: 10, length: 10, chamferRadius: 0)
         box.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 0.8, green: 0.1, blue: 0.3, alpha: 1)
         let boxNode = SCNNode(geometry: box)
         boxNode.position = SCNVector3(0,0,15)
         
-        self.rootNode.addChildNode(boxNode)
+        let plate = SCNBox(width: 13, height: 13, length: 2, chamferRadius: 0)
+        plate.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 0.0, green: 0.5, blue: 0.9, alpha: 1)
+        let plateNode = SCNNode(geometry: plate)
+        plateNode.position = SCNVector3(0,0,10)
+
+        let stick = SCNBox(width: 2, height: 15, length: 2, chamferRadius: 0)
+        stick.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 1.0, green: 0.9, blue: 0.0, alpha: 1)
+        let stickNode = SCNNode(geometry: stick)
+        stickNode.position = SCNVector3(0,0,20)
+
+        object.addChildNode(boxNode)
+        object.addChildNode(plateNode)
+        object.addChildNode(stickNode)
+        
+        self.rootNode.addChildNode(object)
         
         let spin = CABasicAnimation(keyPath: "rotation")
         // Use from-to to explicitly make a full rotation around z
         spin.fromValue = SCNVector4(x: 0, y: 0, z: 1, w: 0)
-        spin.toValue = SCNVector4(x: 0.5, y: 0, z: 0.5, w: CGFloat(2 * M_PI))
+        spin.toValue = SCNVector4(x: 0.3, y: 1, z: 1, w: CGFloat(2 * M_PI))
         spin.duration = 3
         spin.repeatCount = .infinity
-        boxNode.addAnimation(spin, forKey: "spin around")
+        object.addAnimation(spin, forKey: "spin around")
     }
     
     
