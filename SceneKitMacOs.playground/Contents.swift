@@ -88,6 +88,10 @@ class GameScene: SCNScene {
         spin.duration = 3
         spin.repeatCount = .infinity
         object.addAnimation(spin, forKey: "spin around")
+        
+        
+        // Add Glow
+        object.categoryBitMask = 2
     }
     
     
@@ -107,8 +111,18 @@ class GameScene: SCNScene {
 // Load the SKScene from 'GameScene.sks'
 let sceneView = SCNView(frame: CGRect(x:0 , y:0, width: 320, height: 320))
 sceneView.backgroundColor = NSColor.black
+
 let scene = GameScene()
 // Present the scene
 sceneView.scene = scene
+
+if let path = Bundle.main.path(forResource: "NodeTechnique", ofType: "plist") {
+    if let dict = NSDictionary(contentsOfFile: path)  {
+        let dict2 = dict as! [String : AnyObject]
+        let technique = SCNTechnique(dictionary: dict2)
+        sceneView.technique = technique
+    }
+}
+
 
 PlaygroundSupport.PlaygroundPage.current.liveView = sceneView
