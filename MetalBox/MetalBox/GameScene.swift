@@ -1,10 +1,15 @@
-//: A SpriteKit based Playground
+//
+//  GameScene.swift
+//  MetalBox
+//
+//  Created by Dirk van Oosterbosch on 08/10/2018.
+//  Copyright © 2018 IRLabs. All rights reserved.
+//
 
-import PlaygroundSupport
 import SceneKit
 
 class GameScene: SCNScene {
-
+    
     override init() {
         
         super.init()
@@ -56,7 +61,7 @@ class GameScene: SCNScene {
         backNode.position = SCNVector3(0,0,0)
         self.rootNode.addChildNode(backNode)
         
-
+        
         //// Object
         let object = SCNNode()
         
@@ -69,12 +74,12 @@ class GameScene: SCNScene {
         plate.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 0.0, green: 0.5, blue: 0.9, alpha: 1)
         let plateNode = SCNNode(geometry: plate)
         plateNode.position = SCNVector3(0,0,10)
-
+        
         let stick = SCNBox(width: 2, height: 15, length: 2, chamferRadius: 0)
         stick.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 1.0, green: 0.9, blue: 0.0, alpha: 1)
         let stickNode = SCNNode(geometry: stick)
         stickNode.position = SCNVector3(0,0,20)
-
+        
         object.addChildNode(boxNode)
         object.addChildNode(plateNode)
         object.addChildNode(stickNode)
@@ -84,7 +89,7 @@ class GameScene: SCNScene {
         let spin = CABasicAnimation(keyPath: "rotation")
         // Use from-to to explicitly make a full rotation around z
         spin.fromValue = SCNVector4(x: 0, y: 0, z: 1, w: 0)
-        spin.toValue = SCNVector4(x: 0.3, y: 1, z: 1, w: CGFloat(2 * M_PI))
+        spin.toValue = SCNVector4(x: 0.3, y: 1, z: 1, w: CGFloat(2 * Double.pi))
         spin.duration = 3
         spin.repeatCount = .infinity
         object.addAnimation(spin, forKey: "spin around")
@@ -107,23 +112,3 @@ class GameScene: SCNScene {
         }
     }
 }
-
-// Load the SKScene from 'GameScene.sks'
-let sceneView = SCNView(frame: CGRect(x:0 , y:0, width: 320, height: 320))
-sceneView.backgroundColor = NSColor.black
-
-let scene = GameScene()
-// Present the scene
-sceneView.scene = scene
-
-if let path = Bundle.main.path(forResource: "NodeTechnique", ofType: "plist") {
-    if let dict = NSDictionary(contentsOfFile: path)  {
-        let dict2 = dict as! [String : AnyObject]
-        let technique = SCNTechnique(dictionary: dict2)
-        // Gives stutter
-//        sceneView.technique = technique
-    }
-}
-
-
-PlaygroundSupport.PlaygroundPage.current.liveView = sceneView

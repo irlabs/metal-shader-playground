@@ -12,6 +12,7 @@
 		43BDDECB216B335B00EACA3B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BDDECA216B335B00EACA3B /* art.scnassets */; };
 		43BDDECD216B335E00EACA3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BDDECC216B335E00EACA3B /* Assets.xcassets */; };
 		43BDDED0216B335E00EACA3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BDDECE216B335E00EACA3B /* Main.storyboard */; };
+		43BDDED9216B349500EACA3B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDED8216B349500EACA3B /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		43BDDECF216B335E00EACA3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43BDDED1216B335E00EACA3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43BDDED2216B335E00EACA3B /* MetalBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetalBox.entitlements; sourceTree = "<group>"; };
+		43BDDED8216B349500EACA3B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				43BDDEC6216B335B00EACA3B /* AppDelegate.swift */,
 				43BDDEC8216B335B00EACA3B /* GameViewController.swift */,
+				43BDDED8216B349500EACA3B /* GameScene.swift */,
 				43BDDECA216B335B00EACA3B /* art.scnassets */,
 				43BDDECC216B335E00EACA3B /* Assets.xcassets */,
 				43BDDECE216B335E00EACA3B /* Main.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43BDDED9216B349500EACA3B /* GameScene.swift in Sources */,
 				43BDDEC9216B335B00EACA3B /* GameViewController.swift in Sources */,
 				43BDDEC7216B335B00EACA3B /* AppDelegate.swift in Sources */,
 			);
