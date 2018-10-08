@@ -142,7 +142,7 @@
 			<key>format</key>
 			<string>rgb</string>
 			<key>size</key>
-			<string>512x512</string>
+			<string>320x320</string>
 			<key>scaleFactor</key>
 			<integer>1</integer>
 		</dict>
