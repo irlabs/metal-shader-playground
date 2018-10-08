@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		432580CC216BA7EA0011C1D5 /* draw_normals.metal in Sources */ = {isa = PBXBuildFile; fileRef = 432580CA216BA7EA0011C1D5 /* draw_normals.metal */; };
+		432580CD216BA7EA0011C1D5 /* draw_normals.json in Resources */ = {isa = PBXBuildFile; fileRef = 432580CB216BA7EA0011C1D5 /* draw_normals.json */; };
 		43BDDEC7216B335B00EACA3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDEC6216B335B00EACA3B /* AppDelegate.swift */; };
 		43BDDEC9216B335B00EACA3B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDEC8216B335B00EACA3B /* GameViewController.swift */; };
 		43BDDECB216B335B00EACA3B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BDDECA216B335B00EACA3B /* art.scnassets */; };
 		43BDDECD216B335E00EACA3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BDDECC216B335E00EACA3B /* Assets.xcassets */; };
 		43BDDED0216B335E00EACA3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BDDECE216B335E00EACA3B /* Main.storyboard */; };
 		43BDDED9216B349500EACA3B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDED8216B349500EACA3B /* GameScene.swift */; };
+		43BDDEDC216B35B200EACA3B /* NodeRender.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDEDA216B35B200EACA3B /* NodeRender.metal */; };
+		43BDDEDD216B35B200EACA3B /* NodeTechnique.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43BDDEDB216B35B200EACA3B /* NodeTechnique.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		432580CA216BA7EA0011C1D5 /* draw_normals.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = draw_normals.metal; sourceTree = "<group>"; };
+		432580CB216BA7EA0011C1D5 /* draw_normals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = draw_normals.json; sourceTree = "<group>"; };
 		43BDDEC3216B335B00EACA3B /* MetalBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BDDEC6216B335B00EACA3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43BDDEC8216B335B00EACA3B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -25,6 +31,8 @@
 		43BDDED1216B335E00EACA3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43BDDED2216B335E00EACA3B /* MetalBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetalBox.entitlements; sourceTree = "<group>"; };
 		43BDDED8216B349500EACA3B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		43BDDEDA216B35B200EACA3B /* NodeRender.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = NodeRender.metal; path = ../../SceneKitMacOs.playground/Resources/NodeRender.metal; sourceTree = "<group>"; };
+		43BDDEDB216B35B200EACA3B /* NodeTechnique.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = NodeTechnique.plist; path = ../../SceneKitMacOs.playground/Resources/NodeTechnique.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +46,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		432580C9216BA7DB0011C1D5 /* draw_normals */ = {
+			isa = PBXGroup;
+			children = (
+				432580CB216BA7EA0011C1D5 /* draw_normals.json */,
+				432580CA216BA7EA0011C1D5 /* draw_normals.metal */,
+			);
+			path = draw_normals;
+			sourceTree = "<group>";
+		};
 		43BDDEBA216B335B00EACA3B = {
 			isa = PBXGroup;
 			children = (
@@ -57,9 +74,12 @@
 		43BDDEC5216B335B00EACA3B /* MetalBox */ = {
 			isa = PBXGroup;
 			children = (
+				432580C9216BA7DB0011C1D5 /* draw_normals */,
 				43BDDEC6216B335B00EACA3B /* AppDelegate.swift */,
 				43BDDEC8216B335B00EACA3B /* GameViewController.swift */,
 				43BDDED8216B349500EACA3B /* GameScene.swift */,
+				43BDDEDA216B35B200EACA3B /* NodeRender.metal */,
+				43BDDEDB216B35B200EACA3B /* NodeTechnique.plist */,
 				43BDDECA216B335B00EACA3B /* art.scnassets */,
 				43BDDECC216B335E00EACA3B /* Assets.xcassets */,
 				43BDDECE216B335E00EACA3B /* Main.storyboard */,
@@ -128,6 +148,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				43BDDED0216B335E00EACA3B /* Main.storyboard in Resources */,
+				432580CD216BA7EA0011C1D5 /* draw_normals.json in Resources */,
+				43BDDEDD216B35B200EACA3B /* NodeTechnique.plist in Resources */,
 				43BDDECD216B335E00EACA3B /* Assets.xcassets in Resources */,
 				43BDDECB216B335B00EACA3B /* art.scnassets in Resources */,
 			);
@@ -140,9 +162,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				432580CC216BA7EA0011C1D5 /* draw_normals.metal in Sources */,
 				43BDDED9216B349500EACA3B /* GameScene.swift in Sources */,
 				43BDDEC9216B335B00EACA3B /* GameViewController.swift in Sources */,
 				43BDDEC7216B335B00EACA3B /* AppDelegate.swift in Sources */,
+				43BDDEDC216B35B200EACA3B /* NodeRender.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

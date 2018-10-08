@@ -1,0 +1,57 @@
+{
+    "passes" : {
+        "draw_normals" : {
+            
+            "outputs" : {
+                "color" : "normal_map"
+            },
+            
+            "inputs" : {
+                "a_position" : "a_position-symbol"
+            },
+            
+            "metalVertexShader" : "normalsVertex",
+            "metalFragmentShader" : "normalsFragment",
+            
+            "draw" : "DRAW_SCENE",
+            
+            "colorStates" : {
+                "clear" : 1
+            },
+
+            "depthStates" : {
+                "clear" : 1
+            }
+        },
+        "draw_result" : {
+            "metalVertexShader" : "resultVertex",
+            "metalFragmentShader" : "resultFragment",
+            "draw" : "DRAW_QUAD",
+            "inputs" : {
+                "a_position" : "a_position-symbol",
+                "normalSampler" : "normal_map"
+            },
+            "outputs" : {
+                "color" : "COLOR"
+            },
+            "colorStates" : {
+                "clear" : 1,
+            
+            }
+        }
+    },
+    
+    "sequence" : [ "draw_normals", "draw_result"],
+    
+    "targets" : { 
+        "normal_map" : {"type" : "color"} 
+    },
+    
+    "symbols" : {
+        "a_position-symbol" : {
+            "semantic" : "vertex"
+        },
+        
+    }
+}
+
