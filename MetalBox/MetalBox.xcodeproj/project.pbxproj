@@ -22,6 +22,8 @@
 /* Begin PBXFileReference section */
 		432580CA216BA7EA0011C1D5 /* draw_normals.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = draw_normals.metal; sourceTree = "<group>"; };
 		432580CB216BA7EA0011C1D5 /* draw_normals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = draw_normals.json; sourceTree = "<group>"; };
+		432580D0216BFED80011C1D5 /* draw_mask.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = draw_mask.json; sourceTree = "<group>"; };
+		432580D1216BFED80011C1D5 /* draw_mask.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = draw_mask.metal; sourceTree = "<group>"; };
 		43BDDEC3216B335B00EACA3B /* MetalBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BDDEC6216B335B00EACA3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43BDDEC8216B335B00EACA3B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,15 @@
 			path = draw_highlight;
 			sourceTree = "<group>";
 		};
+		432580CF216BFE970011C1D5 /* draw_mask */ = {
+			isa = PBXGroup;
+			children = (
+				432580D0216BFED80011C1D5 /* draw_mask.json */,
+				432580D1216BFED80011C1D5 /* draw_mask.metal */,
+			);
+			path = draw_mask;
+			sourceTree = "<group>";
+		};
 		43BDDEBA216B335B00EACA3B = {
 			isa = PBXGroup;
 			children = (
@@ -83,11 +94,12 @@
 		43BDDEC5216B335B00EACA3B /* MetalBox */ = {
 			isa = PBXGroup;
 			children = (
-				432580CE216BA8D50011C1D5 /* draw_highlight */,
-				432580C9216BA7DB0011C1D5 /* draw_normals */,
 				43BDDEC6216B335B00EACA3B /* AppDelegate.swift */,
 				43BDDEC8216B335B00EACA3B /* GameViewController.swift */,
 				43BDDED8216B349500EACA3B /* GameScene.swift */,
+				432580CE216BA8D50011C1D5 /* draw_highlight */,
+				432580C9216BA7DB0011C1D5 /* draw_normals */,
+				432580CF216BFE970011C1D5 /* draw_mask */,
 				43BDDECA216B335B00EACA3B /* art.scnassets */,
 				43BDDECC216B335E00EACA3B /* Assets.xcassets */,
 				43BDDECE216B335E00EACA3B /* Main.storyboard */,
