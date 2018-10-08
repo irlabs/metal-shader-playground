@@ -28,14 +28,12 @@ class GameViewController: NSViewController {
         
         // configure the view
         scnView.backgroundColor = NSColor.black
+
+        
+        /* Tests with shaders */
         
         // set draw_normals SCNTechnique
-        if let path = Bundle.main.url(forResource: "draw_normals", withExtension: "json") {
-            let data = try? Data.init(contentsOf: path)
-            let techDict = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
-            let technique = SCNTechnique.init(dictionary: techDict! as! [String : Any])
-            scnView.technique = technique
-        }
+        setTechnique(name: "draw_normals", in: scnView)
 
         // draw_highlight (blur)
         // Configure the Technique
@@ -48,5 +46,16 @@ class GameViewController: NSViewController {
 //            }
 //        }
 
+    }
+    
+    func setTechnique(name: String, in scnView: SCNView) {
+        guard let path = Bundle.main.url(forResource: name, withExtension: "json") else { return }
+        guard let data = try? Data.init(contentsOf: path) else { return }
+        guard let techDict = try? JSONSerialization.jsonObject(with: data,
+            options: JSONSerialization.ReadingOptions(rawValue: 0)) else { return }
+        guard let dictionary = techDict as? [String : Any] else { return }
+        guard let technique = SCNTechnique.init(dictionary: dictionary ) else { return }
+        
+        scnView.technique = technique
     }
 }
