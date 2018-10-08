@@ -15,8 +15,8 @@
 		43BDDECD216B335E00EACA3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BDDECC216B335E00EACA3B /* Assets.xcassets */; };
 		43BDDED0216B335E00EACA3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BDDECE216B335E00EACA3B /* Main.storyboard */; };
 		43BDDED9216B349500EACA3B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDED8216B349500EACA3B /* GameScene.swift */; };
-		43BDDEDC216B35B200EACA3B /* NodeRender.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDEDA216B35B200EACA3B /* NodeRender.metal */; };
-		43BDDEDD216B35B200EACA3B /* NodeTechnique.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43BDDEDB216B35B200EACA3B /* NodeTechnique.plist */; };
+		43BDDEDC216B35B200EACA3B /* draw_highlight.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDEDA216B35B200EACA3B /* draw_highlight.metal */; };
+		43BDDEDD216B35B200EACA3B /* draw_highlight.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43BDDEDB216B35B200EACA3B /* draw_highlight.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +31,8 @@
 		43BDDED1216B335E00EACA3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43BDDED2216B335E00EACA3B /* MetalBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetalBox.entitlements; sourceTree = "<group>"; };
 		43BDDED8216B349500EACA3B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		43BDDEDA216B35B200EACA3B /* NodeRender.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = NodeRender.metal; path = ../../SceneKitMacOs.playground/Resources/NodeRender.metal; sourceTree = "<group>"; };
-		43BDDEDB216B35B200EACA3B /* NodeTechnique.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = NodeTechnique.plist; path = ../../SceneKitMacOs.playground/Resources/NodeTechnique.plist; sourceTree = "<group>"; };
+		43BDDEDA216B35B200EACA3B /* draw_highlight.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = draw_highlight.metal; sourceTree = "<group>"; };
+		43BDDEDB216B35B200EACA3B /* draw_highlight.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = draw_highlight.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +55,15 @@
 			path = draw_normals;
 			sourceTree = "<group>";
 		};
+		432580CE216BA8D50011C1D5 /* draw_highlight */ = {
+			isa = PBXGroup;
+			children = (
+				43BDDEDB216B35B200EACA3B /* draw_highlight.plist */,
+				43BDDEDA216B35B200EACA3B /* draw_highlight.metal */,
+			);
+			path = draw_highlight;
+			sourceTree = "<group>";
+		};
 		43BDDEBA216B335B00EACA3B = {
 			isa = PBXGroup;
 			children = (
@@ -74,12 +83,11 @@
 		43BDDEC5216B335B00EACA3B /* MetalBox */ = {
 			isa = PBXGroup;
 			children = (
+				432580CE216BA8D50011C1D5 /* draw_highlight */,
 				432580C9216BA7DB0011C1D5 /* draw_normals */,
 				43BDDEC6216B335B00EACA3B /* AppDelegate.swift */,
 				43BDDEC8216B335B00EACA3B /* GameViewController.swift */,
 				43BDDED8216B349500EACA3B /* GameScene.swift */,
-				43BDDEDA216B35B200EACA3B /* NodeRender.metal */,
-				43BDDEDB216B35B200EACA3B /* NodeTechnique.plist */,
 				43BDDECA216B335B00EACA3B /* art.scnassets */,
 				43BDDECC216B335E00EACA3B /* Assets.xcassets */,
 				43BDDECE216B335E00EACA3B /* Main.storyboard */,
@@ -149,7 +157,7 @@
 			files = (
 				43BDDED0216B335E00EACA3B /* Main.storyboard in Resources */,
 				432580CD216BA7EA0011C1D5 /* draw_normals.json in Resources */,
-				43BDDEDD216B35B200EACA3B /* NodeTechnique.plist in Resources */,
+				43BDDEDD216B35B200EACA3B /* draw_highlight.plist in Resources */,
 				43BDDECD216B335E00EACA3B /* Assets.xcassets in Resources */,
 				43BDDECB216B335B00EACA3B /* art.scnassets in Resources */,
 			);
@@ -166,7 +174,7 @@
 				43BDDED9216B349500EACA3B /* GameScene.swift in Sources */,
 				43BDDEC9216B335B00EACA3B /* GameViewController.swift in Sources */,
 				43BDDEC7216B335B00EACA3B /* AppDelegate.swift in Sources */,
-				43BDDEDC216B35B200EACA3B /* NodeRender.metal in Sources */,
+				43BDDEDC216B35B200EACA3B /* draw_highlight.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

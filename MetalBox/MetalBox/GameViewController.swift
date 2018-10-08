@@ -66,26 +66,24 @@ class GameViewController: NSViewController {
 //        gestureRecognizers.insert(clickGesture, at: 0)
 //        scnView.gestureRecognizers = gestureRecognizers
         
-        // set SCNTechnique
-        if let path = Bundle.main.url(forResource: "draw_normals", withExtension: "json") {
-            let data = try? Data.init(contentsOf: path)
-            let techDict = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
-            let technique = SCNTechnique.init(dictionary: techDict! as! [String : Any])
-            scnView.technique = technique
-        }
+//        // set SCNTechnique
+//        if let path = Bundle.main.url(forResource: "draw_normals", withExtension: "json") {
+//            let data = try? Data.init(contentsOf: path)
+//            let techDict = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
+//            let technique = SCNTechnique.init(dictionary: techDict! as! [String : Any])
+//            scnView.technique = technique
+//        }
         
-        /*
-        // NodeTechnique (blur)
+        // draw_highlight (blur)
         // Configure the Technique
         
-        if let path = Bundle.main.path(forResource: "NodeTechnique", ofType: "plist") {
+        if let path = Bundle.main.path(forResource: "draw_highlight", ofType: "plist") {
             if let dict = NSDictionary(contentsOfFile: path)  {
                 let dict2 = dict as! [String : AnyObject]
                 let technique = SCNTechnique(dictionary: dict2)
                 scnView.technique = technique
             }
         }
-        */
 
     }
 
