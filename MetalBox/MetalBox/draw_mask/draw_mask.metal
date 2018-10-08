@@ -28,7 +28,7 @@ struct VertexOut_t
 {
     float4 position [[position]];
     float4 normal;
-    float2  uv;
+    float2 uv;
 };
 
 
@@ -37,7 +37,7 @@ struct SceneNode {
     float4x4 normalTransform;
 };
 
-vertex VertexOut_t normalsVertex(VertexIn_t in [[stage_in]],
+vertex VertexOut_t normalsVertex2(VertexIn_t in [[stage_in]],
                                         constant SceneNode& scn_node [[buffer(0)]])
 {
     VertexOut_t out;
@@ -47,7 +47,7 @@ vertex VertexOut_t normalsVertex(VertexIn_t in [[stage_in]],
 }
 
 
-fragment half4 normalsFragment(VertexOut_t vert [[stage_in]])
+fragment half4 normalsFragment2(VertexOut_t vert [[stage_in]])
 {
     half3 normal = normalize(half3(vert.normal.xyz));
 //    return half4(1.0,0.,0.,1.0);
@@ -57,7 +57,7 @@ fragment half4 normalsFragment(VertexOut_t vert [[stage_in]])
 
 // ---- result pass
 
-vertex VertexOut_t resultVertex(VertexIn_t in [[stage_in]],
+vertex VertexOut_t resultVertex2(VertexIn_t in [[stage_in]],
                                         constant SCNSceneBuffer& scn_frame [[buffer(0)]],
                                         constant SceneNode& scn_node [[buffer(1)]])
 {
@@ -68,7 +68,7 @@ vertex VertexOut_t resultVertex(VertexIn_t in [[stage_in]],
 };
 
 
-fragment half4 resultFragment(VertexOut_t vert [[stage_in]],
+fragment half4 resultFragment2(VertexOut_t vert [[stage_in]],
                                     texture2d<float, access::sample> normalSampler [[texture(0)]])
 {
     

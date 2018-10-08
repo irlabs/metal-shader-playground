@@ -33,8 +33,11 @@ class GameViewController: NSViewController {
         /* Tests with shaders */
         
         // set draw_normals SCNTechnique
-        setTechnique(name: "draw_normals", in: scnView)
+//        setTechnique(name: "draw_normals", in: scnView)
 
+        // set draw_mask SCNTechnique
+        setTechnique(name: "draw_mask", in: scnView)
+        
         // draw_highlight (blur)
         // Configure the Technique
         

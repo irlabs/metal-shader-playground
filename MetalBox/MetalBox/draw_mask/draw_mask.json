@@ -1,6 +1,6 @@
 {
     "passes" : {
-        "draw_normals" : {
+        "draw_mask" : {
             
             "outputs" : {
                 "color" : "normal_map"
@@ -10,8 +10,8 @@
                 "a_position" : "a_position-symbol"
             },
             
-            "metalVertexShader" : "normalsVertex",
-            "metalFragmentShader" : "normalsFragment",
+            "metalVertexShader" : "normalsVertex2",
+            "metalFragmentShader" : "normalsFragment2",
             
             "draw" : "DRAW_SCENE",
             
@@ -24,8 +24,8 @@
             }
         },
         "draw_result" : {
-            "metalVertexShader" : "resultVertex",
-            "metalFragmentShader" : "resultFragment",
+            "metalVertexShader" : "resultVertex2",
+            "metalFragmentShader" : "resultFragment2",
             "draw" : "DRAW_QUAD",
             "inputs" : {
                 "a_position" : "a_position-symbol",
@@ -41,7 +41,7 @@
         }
     },
     
-    "sequence" : [ "draw_normals", "draw_result"],
+    "sequence" : [ "draw_mask", "draw_result"],
     
     "targets" : { 
         "normal_map" : {"type" : "color"} 
