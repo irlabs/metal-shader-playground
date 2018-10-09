@@ -1,6 +1,6 @@
 {
     "passes" : {
-        "draw_mask" : {
+        "pass_draw_mask" : {
             
             "outputs" : {
                 "color" : "normal_map"
@@ -23,9 +23,9 @@
                 "clear" : 1
             },
             
-            "includeCategoryMask": 60
+            "includeCategoryMask": 2
         },
-        "draw_result" : {
+        "pass_combine" : {
             "metalVertexShader" : "resultVertex2",
             "metalFragmentShader" : "resultFragment2",
             "draw" : "DRAW_QUAD",
@@ -43,7 +43,7 @@
         }
     },
     
-    "sequence" : [ "draw_mask", "draw_result"],
+    "sequence" : [ "pass_draw_mask", "pass_combine"],
     
     "targets" : { 
         "normal_map" : {"type" : "color"} 

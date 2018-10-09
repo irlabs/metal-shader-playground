@@ -135,7 +135,7 @@ class GameScene: SCNScene {
          */
  
         object.enumerateChildNodes { (node, stop) in
-            node.categoryBitMask = 4
+            node.categoryBitMask = 2
         }
 
         self.rootNode.addChildNode(object)
