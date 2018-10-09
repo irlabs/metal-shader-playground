@@ -61,6 +61,32 @@ class GameScene: SCNScene {
         backNode.position = SCNVector3(0,0,0)
         self.rootNode.addChildNode(backNode)
         
+        /// Other elements
+        let otherOffset = 16
+        let geoA = SCNSphere(radius: 2)
+        geoA.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 1.0, green: 1.0, blue: 0.7, alpha: 1.0)
+        let a = SCNNode(geometry: geoA)
+        a.position = SCNVector3(-otherOffset, otherOffset, 0)
+        self.rootNode.addChildNode(a)
+
+        let geoB = SCNSphere(radius: 2)
+        geoB.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 1.0, green: 0.7, blue: 0.7, alpha: 1.0)
+        let b = SCNNode(geometry: geoB)
+        b.position = SCNVector3(otherOffset, otherOffset, 0)
+        self.rootNode.addChildNode(b)
+
+        let geoC = SCNSphere(radius: 2)
+        geoC.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 0.7, green: 1.0, blue: 0.7, alpha: 1.0)
+        let c = SCNNode(geometry: geoC)
+        c.position = SCNVector3(-otherOffset, -otherOffset, 0)
+        self.rootNode.addChildNode(c)
+        
+        let geoD = SCNSphere(radius: 2)
+        geoD.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 0.7, green: 0.7, blue: 1.0, alpha: 1.0)
+        let d = SCNNode(geometry: geoD)
+        d.position = SCNVector3(otherOffset, -otherOffset, 0)
+        self.rootNode.addChildNode(d)
+
         
         //// Object
         let object = SCNNode()
