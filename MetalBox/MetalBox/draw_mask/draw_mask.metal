@@ -14,18 +14,16 @@ constexpr sampler samp = sampler(coord::normalized,
                               filter::linear);
 
 
-// ----------------------- normals ------------------------
+// -------- Experiment with Normals (masked normal colors) --------
 
 
-struct VertexIn_t
-{
+struct VertexIn_t {
     float4 position [[ attribute(SCNVertexSemanticPosition) ]];
     float4 normal  [[ attribute(SCNVertexSemanticNormal) ]];
     float4 color  [[ attribute(SCNVertexSemanticColor) ]];
 };
 
-struct VertexOut_t
-{
+struct VertexOut_t {
     float4 position [[position]];
     float4 normal;
     float2 uv;
@@ -37,41 +35,44 @@ struct SceneNode {
     float4x4 normalTransform;
 };
 
-vertex VertexOut_t normalsVertex2(VertexIn_t in [[stage_in]],
-                                        constant SceneNode& scn_node [[buffer(0)]])
-{
+
+// ---- draw normals pass
+
+vertex VertexOut_t drawNormalsVertex(VertexIn_t in [[stage_in]],
+                                        constant SceneNode& scn_node [[buffer(0)]]) {
+    
     VertexOut_t out;
-    out.position = scn_node.modelViewProjectionTransform  * in.position;
+    out.position = scn_node.modelViewProjectionTransform * in.position;
     out.normal  = scn_node.normalTransform * in.normal; 
     return out;
 }
 
 
-fragment half4 normalsFragment2(VertexOut_t vert [[stage_in]])
-{
+fragment half4 drawNormalsFragment(VertexOut_t vert [[stage_in]]) {
+    
     half3 normal = normalize(half3(vert.normal.xyz));
 //    return half4(1.0,0.,0.,1.0);
     return half4(normal, 1.0);
 }
 
 
-// ---- result pass
+// ---- compose pass
 
-vertex VertexOut_t resultVertex2(VertexIn_t in [[stage_in]],
+vertex VertexOut_t normalsComposeVertex(VertexIn_t in [[stage_in]],
                                         constant SCNSceneBuffer& scn_frame [[buffer(0)]],
-                                        constant SceneNode& scn_node [[buffer(1)]])
-{
+                                        constant SceneNode& scn_node [[buffer(1)]]) {
+    
     VertexOut_t out;
     out.position = in.position;
-    out.uv = in.position.xy*float2(.5,-.5) + .5;
+    out.uv = in.position.xy * float2(.5,-.5) + .5;
     return out;
 };
 
 
-fragment half4 resultFragment2(VertexOut_t vert [[stage_in]],
+fragment half4 normalsComposeFragment(VertexOut_t vert [[stage_in]],
                                     texture2d<float, access::sample> normalSampler [[texture(0)]],
-                                    texture2d<float, access::sample> colorSampler [[texture(1)]])
-{
+                                    texture2d<float, access::sample> colorSampler [[texture(1)]]) {
+    
     float4 FragmentColor = colorSampler.sample(samp, vert.uv);
     float4 NormalColor = normalSampler.sample(samp, vert.uv);
 

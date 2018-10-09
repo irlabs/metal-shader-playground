@@ -1,36 +1,31 @@
 {
     "passes" : {
-        "pass_draw_mask" : {
-            
+        
+        "pass_draw_normals" : {
+            "metalVertexShader" : "drawNormalsVertex",
+            "metalFragmentShader" : "drawNormalsFragment",
+            "inputs" : {
+                "aPosition" : "vertex_symbol"
+            },
             "outputs" : {
                 "color" : "normal_map"
             },
-            
-            "inputs" : {
-                "aPosition" : "vertexSymbol"
-            },
-            
-            "metalVertexShader" : "normalsVertex2",
-            "metalFragmentShader" : "normalsFragment2",
-            
-            "draw" : "DRAW_SCENE",
-            
             "colorStates" : {
                 "clear" : 1
             },
-
             "depthStates" : {
                 "clear" : 1
             },
-            
+            "draw" : "DRAW_SCENE",
             "includeCategoryMask": 2
         },
-        "pass_combine" : {
-            "metalVertexShader" : "resultVertex2",
-            "metalFragmentShader" : "resultFragment2",
+        
+        "pass_compose" : {
+            "metalVertexShader" : "normalsComposeVertex",
+            "metalFragmentShader" : "normalsComposeFragment",
             "draw" : "DRAW_QUAD",
             "inputs" : {
-                "aPosition" : "vertexSymbol",
+                "aPosition" : "vertex_symbol",
                 "normalSampler" : "normal_map",
                 "colorSampler": "COLOR"
             },
@@ -39,22 +34,20 @@
             },
             "colorStates" : {
                 "clear" : 1,
-            
             }
         }
     },
     
-    "sequence" : [ "pass_draw_mask", "pass_combine"],
+    "sequence" : [ "pass_draw_normals", "pass_compose"],
     
     "targets" : { 
         "normal_map" : {"type" : "color"} 
     },
     
     "symbols" : {
-        "vertexSymbol" : {
+        "vertex_symbol" : {
             "semantic" : "vertex"
         },
-        
     }
 }
 
