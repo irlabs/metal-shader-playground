@@ -1,0 +1,95 @@
+{
+    "passes" : {
+
+        "pass_draw_masks" : {
+            "program": "doesntexist",
+            "metalVertexShader" : "mask_vertex",
+            "metalFragmentShader" : "mask_fragment",
+            "inputs" : {
+                "colorSampler" : "COLOR",
+                "aPos" : "vertex_symbol"
+            },
+            "outputs" : {
+                "color" : "MASK"
+            },
+            "draw" : "DRAW_SCENE",
+            "includeCategoryMask": 2
+        },
+
+        "pass_blur_h" : {
+            "program": "doesntexist",
+            "metalVertexShader" : "blur_vertex",
+            "metalFragmentShader" : "blur_fragment_h",
+            "inputs" : {
+                "aPos" : "vertex_symbol",
+                "maskSampler" : "MASK",
+            },
+            "outputs" : {
+                "color" : "MASK"
+            },
+            "colorStates" : {
+                "clear" : 0,
+            },
+            "draw" : "DRAW_QUAD",
+        },
+
+        "pass_blur_v" : {
+            "program": "doesntexist",
+            "metalVertexShader" : "blur_vertex",
+            "metalFragmentShader" : "blur_fragment_v",
+            "inputs" : {
+                "aPos" : "vertex_symbol",
+                "maskSampler" : "MASK",
+            },
+            "outputs" : {
+                "color" : "MASK"
+            },
+            "colorStates" : {
+                "clear" : 0,
+            },
+            "draw" : "DRAW_QUAD",
+        },
+
+        "pass_combine" : {
+            "program": "doesntexist",
+            "metalVertexShader" : "combine_vertex",
+            "metalFragmentShader" : "combine_fragment",
+            "inputs" : {
+                "aPos" : "vertex_symbol",
+                "colorSampler": "COLOR",
+                "maskSampler" : "MASK",
+            },
+            "outputs" : {
+                "color" : "COLOR"
+            },
+            "colorStates" : {
+                "clear" : 0,
+            },
+            "draw" : "DRAW_QUAD",
+        }
+    },
+
+    "sequence" : [
+        "pass_draw_masks",
+        "pass_blur_h",
+        "pass_blur_v",
+        "pass_blur_h",
+        "pass_blur_v",
+        "pass_combine"
+    ],
+
+    "targets" : {
+        "MASK" : {
+            "type" : "color",
+            "format" : "rgb",
+            "size" : "320x320",
+            "scaleFactor" : 1
+        }
+    },
+
+    "symbols" : {
+        "vertex_symbol" : {
+            "semantic" : "vertex"
+        },
+    }
+}

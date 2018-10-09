@@ -39,7 +39,7 @@ class GameViewController: NSViewController {
         setTechnique(name: "draw_mask", in: scnView)
         
         // draw_highlight (blur)
-        // Configure the Technique
+//        setTechnique(name: "draw_highlight", in: scnView)
         
 //        if let path = Bundle.main.path(forResource: "draw_highlight", ofType: "plist") {
 //            if let dict = NSDictionary(contentsOfFile: path)  {
@@ -51,6 +51,7 @@ class GameViewController: NSViewController {
 
     }
     
+    // Configuring the Technique
     func setTechnique(name: String, in scnView: SCNView) {
         guard let path = Bundle.main.url(forResource: name, withExtension: "json") else { return }
         guard let data = try? Data.init(contentsOf: path) else { return }
