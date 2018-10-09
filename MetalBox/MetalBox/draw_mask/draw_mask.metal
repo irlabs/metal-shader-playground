@@ -69,12 +69,18 @@ vertex VertexOut_t resultVertex2(VertexIn_t in [[stage_in]],
 
 
 fragment half4 resultFragment2(VertexOut_t vert [[stage_in]],
-                                    texture2d<float, access::sample> normalSampler [[texture(0)]])
+                                    texture2d<float, access::sample> normalSampler [[texture(0)]],
+                                    texture2d<float, access::sample> colorSampler [[texture(1)]])
 {
+    float4 FragmentColor = colorSampler.sample(samp, vert.uv);
+    float4 NormalColor = normalSampler.sample(samp, vert.uv);
+
+    if ( (NormalColor.r + NormalColor.g + NormalColor.b) < 0.01 ) {
+        return half4(FragmentColor);
+    }
     
-    float4 FragmentColor = normalSampler.sample(samp, vert.uv);
 //    return half4(1.0,0.0,0.0,1.0);
-    return half4(FragmentColor);
+    return half4(NormalColor);
 }
 
 

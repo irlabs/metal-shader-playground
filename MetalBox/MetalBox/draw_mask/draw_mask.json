@@ -31,7 +31,8 @@
             "draw" : "DRAW_QUAD",
             "inputs" : {
                 "aPosition" : "vertexSymbol",
-                "normalSampler" : "normal_map"
+                "normalSampler" : "normal_map",
+                "colorSampler": "COLOR"
             },
             "outputs" : {
                 "color" : "COLOR"
