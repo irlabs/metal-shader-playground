@@ -7,7 +7,7 @@
             },
             
             "inputs" : {
-                "a_position" : "a_position-symbol"
+                "aPosition" : "vertexSymbol"
             },
             
             "metalVertexShader" : "normalsVertex2",
@@ -28,7 +28,7 @@
             "metalFragmentShader" : "resultFragment2",
             "draw" : "DRAW_QUAD",
             "inputs" : {
-                "a_position" : "a_position-symbol",
+                "aPosition" : "vertexSymbol",
                 "normalSampler" : "normal_map"
             },
             "outputs" : {
@@ -48,7 +48,7 @@
     },
     
     "symbols" : {
-        "a_position-symbol" : {
+        "vertexSymbol" : {
             "semantic" : "vertex"
         },
         
