@@ -21,7 +21,9 @@
 
             "depthStates" : {
                 "clear" : 1
-            }
+            },
+            
+            "includeCategoryMask": 60
         },
         "draw_result" : {
             "metalVertexShader" : "resultVertex2",

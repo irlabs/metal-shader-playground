@@ -67,24 +67,28 @@ class GameScene: SCNScene {
         geoA.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 1.0, green: 1.0, blue: 0.7, alpha: 1.0)
         let a = SCNNode(geometry: geoA)
         a.position = SCNVector3(-otherOffset, otherOffset, 0)
+        a.categoryBitMask = 4
         self.rootNode.addChildNode(a)
 
         let geoB = SCNSphere(radius: 2)
         geoB.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 1.0, green: 0.7, blue: 0.7, alpha: 1.0)
         let b = SCNNode(geometry: geoB)
         b.position = SCNVector3(otherOffset, otherOffset, 0)
+        b.categoryBitMask = 8
         self.rootNode.addChildNode(b)
 
         let geoC = SCNSphere(radius: 2)
         geoC.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 0.7, green: 1.0, blue: 0.7, alpha: 1.0)
         let c = SCNNode(geometry: geoC)
         c.position = SCNVector3(-otherOffset, -otherOffset, 0)
+        c.categoryBitMask = 16
         self.rootNode.addChildNode(c)
         
         let geoD = SCNSphere(radius: 2)
         geoD.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 0.7, green: 0.7, blue: 1.0, alpha: 1.0)
         let d = SCNNode(geometry: geoD)
         d.position = SCNVector3(otherOffset, -otherOffset, 0)
+        d.categoryBitMask = 32
         self.rootNode.addChildNode(d)
 
         
@@ -109,7 +113,31 @@ class GameScene: SCNScene {
         object.addChildNode(boxNode)
         object.addChildNode(plateNode)
         object.addChildNode(stickNode)
+
+        // Add Glow
         
+        
+        /**
+         #### Notes on categoryBitMask:
+         
+         - categoryBitMasks need to be applied to all the childNodes of compound / combined node. (see example below)
+         - default categoryBitMask or nodes, lights and techniques is 1
+         - bitMask of nodes and lights (or technique) are compared with bitwise AND (0 * 1 = 0). Any non-zero result is rendered.
+         
+         So don't use:
+         object.categoryBitMask = 4
+         
+         But use:
+         object.enumerateChildNodes { (node, stop) in
+            node.categoryBitMask = 4
+         }
+
+         */
+ 
+        object.enumerateChildNodes { (node, stop) in
+            node.categoryBitMask = 4
+        }
+
         self.rootNode.addChildNode(object)
         
         let spin = CABasicAnimation(keyPath: "rotation")
@@ -121,8 +149,6 @@ class GameScene: SCNScene {
         object.addAnimation(spin, forKey: "spin around")
         
         
-        // Add Glow
-        object.categoryBitMask = 2
     }
     
     
