@@ -36,10 +36,10 @@ class GameViewController: NSViewController {
 //        setTechnique(name: "draw_normals", in: scnView)
 
         // set draw_mask SCNTechnique
-        setTechnique(name: "draw_mask", in: scnView)
+//        setTechnique(name: "draw_mask", in: scnView)
         
         // draw_highlight (blur)
-//        setTechnique(name: "draw_highlight", in: scnView)
+        setTechnique(name: "draw_highlight", in: scnView)
         
 //        if let path = Bundle.main.path(forResource: "draw_highlight", ofType: "plist") {
 //            if let dict = NSDictionary(contentsOfFile: path)  {
@@ -53,12 +53,22 @@ class GameViewController: NSViewController {
     
     // Configuring the Technique
     func setTechnique(name: String, in scnView: SCNView) {
-        guard let path = Bundle.main.url(forResource: name, withExtension: "json") else { return }
-        guard let data = try? Data.init(contentsOf: path) else { return }
+        guard let path = Bundle.main.url(forResource: name, withExtension: "json") else {
+            fatalError("Definition file \(name).json not found in bundle")
+        }
+        guard let data = try? Data(contentsOf: path) else {
+            fatalError("Could not read contents of definition file")
+        }
         guard let techDict = try? JSONSerialization.jsonObject(with: data,
-            options: JSONSerialization.ReadingOptions(rawValue: 0)) else { return }
-        guard let dictionary = techDict as? [String : Any] else { return }
-        guard let technique = SCNTechnique.init(dictionary: dictionary ) else { return }
+            options: JSONSerialization.ReadingOptions(rawValue: 0)) else {
+                fatalError("Malformed JSON format")
+        }
+        guard let dictionary = techDict as? [String : Any] else {
+            fatalError("Technique definition dict (JSON) no valid dictionary")
+        }
+        guard let technique = SCNTechnique(dictionary: dictionary ) else {
+            fatalError("SCNTechnique Failed to initialize")
+        }
         
         scnView.technique = technique
     }
