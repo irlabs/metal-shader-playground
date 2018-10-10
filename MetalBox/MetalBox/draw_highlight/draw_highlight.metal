@@ -1,6 +1,21 @@
+//
+//  draw_highlight.metal
+//  MetalBox
+//
+//  Created by Dirk van Oosterbosch on 10/10/2018.
+//  Copyright © 2018 IRLabs. All rights reserved.
+//
+
 #include <metal_stdlib>
 using namespace metal;
 #include <SceneKit/scn_metal>
+
+constexpr sampler s = sampler(coord::normalized,
+                              r_address::clamp_to_edge,
+                              t_address::repeat,
+                              filter::linear);
+
+// -------- Highlighting 3D objects  -  blurred outline --------
 
 struct custom_node_t3 {
     float4x4 modelTransform;
@@ -22,7 +37,7 @@ struct out_vertex_t
 };
 
 
-// pass_draw_mask
+// -------- pass_draw_masks
 
 vertex out_vertex_t mask_vertex(custom_vertex_t in [[stage_in]],
                                         constant custom_node_t3& scn_node [[buffer(0)]])
@@ -40,12 +55,8 @@ fragment half4 mask_fragment(out_vertex_t in [[stage_in]],
 };
 
 
-////////////
 
-constexpr sampler s = sampler(coord::normalized,
-                              r_address::clamp_to_edge,
-                              t_address::repeat,
-                              filter::linear);
+// -------- pass_combine
 
 vertex out_vertex_t combine_vertex(custom_vertex_t in [[stage_in]])
 {
@@ -77,7 +88,8 @@ fragment half4 combine_fragment(out_vertex_t vert [[stage_in]],
     
 }
 
-///// Blur //////
+
+// -------- Blur passes: pass_blur_h + pass_blur_v
 
 vertex out_vertex_t blur_vertex(custom_vertex_t in [[stage_in]])
 {
