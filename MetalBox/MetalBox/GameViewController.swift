@@ -35,20 +35,51 @@ class GameViewController: NSViewController {
         // set draw_normals SCNTechnique
 //        setTechnique(name: "draw_normals", in: scnView)
 
-        // set draw_mask SCNTechnique
-//        setTechnique(name: "draw_mask", in: scnView)
+        // set draw_masked_normals SCNTechnique
+//        setTechnique(name: "draw_masked_normals", in: scnView)
         
+        // set draw_masked_position SCNTechnique
+//        setTechnique(name: "draw_masked_position", in: scnView)
+
         // draw_highlight (blur)
         setTechnique(name: "draw_highlight", in: scnView)
-        
-//        if let path = Bundle.main.path(forResource: "draw_highlight", ofType: "plist") {
-//            if let dict = NSDictionary(contentsOfFile: path)  {
-//                let dict2 = dict as! [String : AnyObject]
-//                let technique = SCNTechnique(dictionary: dict2)
-//                scnView.technique = technique
-//            }
-//        }
 
+
+        
+        /**
+         #### Notes on Clearing of the color state:
+         
+         - There is a difference between the default state of the clear value between iOS and macOS:
+             - Default `colorStates.clear` on iOS: `true`
+             - Default `colorStates.clear` on macOS: `false`
+         - Default `depthStates.clear` is `false` on both platforms.
+         - Clearing means that each draw pass clear the buffer before rendering content to it.
+         - If you don't clear that means the buffer value could be accumulated
+            - This (not clearing) is useful if e.g. you need multiple blur passes on the same buffer.
+         
+         As an example on what happens if you don't clear the color buffer, when you're not drawing every
+         pixel (e.g. when only some nodes are affected from their categoryBitMask)
+
+         ```
+             "colorStates" : {
+                "clear" : 0
+             },
+         ```
+         
+         See screenshot `masked_position.png`
+         
+         
+         So, to prevent that, in those cases make sure to set the clear state like so:
+         
+         ```
+             "colorStates" : {
+                "clear" : 1
+             },
+             "depthStates" : {
+                "clear" : 1
+             },
+         ```
+        */
     }
     
     // Configuring the Technique

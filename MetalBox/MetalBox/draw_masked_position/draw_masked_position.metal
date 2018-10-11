@@ -1,5 +1,5 @@
 //
-//  draw_mask.metal
+//  draw_masked_position.metal
 //  MetalBox
 //
 //  Created by Dirk van Oosterbosch on 10/10/2018.
@@ -14,7 +14,7 @@ constexpr sampler samp = sampler(coord::normalized,
                               filter::linear);
 
 
-// -------- Experiment with Normals (masked normal colors) --------
+// -------- Experiment with Position (masked normal colors) --------
 
 
 struct VertexIn_t {
@@ -36,29 +36,28 @@ struct SceneNode {
 };
 
 
-// ---- draw normals pass
+// ---- draw position pass
 
-vertex VertexOut_t drawNormalsVertex(VertexIn_t in [[stage_in]],
+vertex VertexOut_t drawPositionVertex(VertexIn_t in [[stage_in]],
                                         constant SceneNode& scn_node [[buffer(0)]]) {
     
     VertexOut_t out;
     out.position = scn_node.modelViewProjectionTransform * in.position;
-    out.normal  = scn_node.normalTransform * in.normal; 
+    out.normal = scn_node.normalTransform * in.normal;
     return out;
 }
 
 
-fragment half4 drawNormalsFragment(VertexOut_t vert [[stage_in]]) {
+fragment half4 drawPositionFragment(VertexOut_t vert [[stage_in]]) {
     
-    half3 normal = normalize(half3(vert.normal.xyz));
-//    return half4(1.0,0.,0.,1.0);
-    return half4(normal, 1.0);
+    half3 position = normalize(half3(vert.position.xyz));
+    return half4(position, 1.0);
 }
 
 
 // ---- compose pass
 
-vertex VertexOut_t normalsComposeVertex(VertexIn_t in [[stage_in]],
+vertex VertexOut_t positionComposeVertex(VertexIn_t in [[stage_in]],
                                         constant SCNSceneBuffer& scn_frame [[buffer(0)]],
                                         constant SceneNode& scn_node [[buffer(1)]]) {
     
@@ -69,7 +68,7 @@ vertex VertexOut_t normalsComposeVertex(VertexIn_t in [[stage_in]],
 };
 
 
-fragment half4 normalsComposeFragment(VertexOut_t vert [[stage_in]],
+fragment half4 positionComposeFragment(VertexOut_t vert [[stage_in]],
                                     texture2d<float, access::sample> normalSampler [[texture(0)]],
                                     texture2d<float, access::sample> colorSampler [[texture(1)]]) {
     
@@ -80,7 +79,6 @@ fragment half4 normalsComposeFragment(VertexOut_t vert [[stage_in]],
         return half4(FragmentColor);
     }
     
-//    return half4(1.0,0.0,0.0,1.0);
     return half4(NormalColor);
 }
 

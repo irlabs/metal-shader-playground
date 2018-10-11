@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		432580CC216BA7EA0011C1D5 /* draw_normals.metal in Sources */ = {isa = PBXBuildFile; fileRef = 432580CA216BA7EA0011C1D5 /* draw_normals.metal */; };
 		432580CD216BA7EA0011C1D5 /* draw_normals.json in Resources */ = {isa = PBXBuildFile; fileRef = 432580CB216BA7EA0011C1D5 /* draw_normals.json */; };
-		432580D2216C05DB0011C1D5 /* draw_mask.json in Resources */ = {isa = PBXBuildFile; fileRef = 432580D0216BFED80011C1D5 /* draw_mask.json */; };
-		432580D3216C05DF0011C1D5 /* draw_mask.metal in Sources */ = {isa = PBXBuildFile; fileRef = 432580D1216BFED80011C1D5 /* draw_mask.metal */; };
+		432580D2216C05DB0011C1D5 /* draw_masked_normals.json in Resources */ = {isa = PBXBuildFile; fileRef = 432580D0216BFED80011C1D5 /* draw_masked_normals.json */; };
+		432580D3216C05DF0011C1D5 /* draw_masked_normals.metal in Sources */ = {isa = PBXBuildFile; fileRef = 432580D1216BFED80011C1D5 /* draw_masked_normals.metal */; };
 		432580D5216CE01A0011C1D5 /* draw_highlight.json in Resources */ = {isa = PBXBuildFile; fileRef = 432580D4216CDBBD0011C1D5 /* draw_highlight.json */; };
 		43BDDEC7216B335B00EACA3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDEC6216B335B00EACA3B /* AppDelegate.swift */; };
 		43BDDEC9216B335B00EACA3B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDEC8216B335B00EACA3B /* GameViewController.swift */; };
@@ -19,13 +19,15 @@
 		43BDDED9216B349500EACA3B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDED8216B349500EACA3B /* GameScene.swift */; };
 		43BDDEDC216B35B200EACA3B /* draw_highlight.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDEDA216B35B200EACA3B /* draw_highlight.metal */; };
 		43BDDEDD216B35B200EACA3B /* draw_highlight.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43BDDEDB216B35B200EACA3B /* draw_highlight.plist */; };
+		43EE8CAC216F588900924AFF /* draw_masked_position.json in Resources */ = {isa = PBXBuildFile; fileRef = 43EE8CAA216F56C200924AFF /* draw_masked_position.json */; };
+		43EE8CAD216F588C00924AFF /* draw_masked_position.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43EE8CAB216F56C200924AFF /* draw_masked_position.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		432580CA216BA7EA0011C1D5 /* draw_normals.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = draw_normals.metal; sourceTree = "<group>"; };
 		432580CB216BA7EA0011C1D5 /* draw_normals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = draw_normals.json; sourceTree = "<group>"; };
-		432580D0216BFED80011C1D5 /* draw_mask.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = draw_mask.json; sourceTree = "<group>"; };
-		432580D1216BFED80011C1D5 /* draw_mask.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = draw_mask.metal; sourceTree = "<group>"; };
+		432580D0216BFED80011C1D5 /* draw_masked_normals.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = draw_masked_normals.json; sourceTree = "<group>"; };
+		432580D1216BFED80011C1D5 /* draw_masked_normals.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = draw_masked_normals.metal; sourceTree = "<group>"; };
 		432580D4216CDBBD0011C1D5 /* draw_highlight.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = draw_highlight.json; sourceTree = "<group>"; };
 		43BDDEC3216B335B00EACA3B /* MetalBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BDDEC6216B335B00EACA3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,8 @@
 		43BDDED8216B349500EACA3B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		43BDDEDA216B35B200EACA3B /* draw_highlight.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = draw_highlight.metal; sourceTree = "<group>"; };
 		43BDDEDB216B35B200EACA3B /* draw_highlight.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = draw_highlight.plist; sourceTree = "<group>"; };
+		43EE8CAA216F56C200924AFF /* draw_masked_position.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = draw_masked_position.json; sourceTree = "<group>"; };
+		43EE8CAB216F56C200924AFF /* draw_masked_position.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = draw_masked_position.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,13 +73,13 @@
 			path = draw_highlight;
 			sourceTree = "<group>";
 		};
-		432580CF216BFE970011C1D5 /* draw_mask */ = {
+		432580CF216BFE970011C1D5 /* draw_masked_normals */ = {
 			isa = PBXGroup;
 			children = (
-				432580D0216BFED80011C1D5 /* draw_mask.json */,
-				432580D1216BFED80011C1D5 /* draw_mask.metal */,
+				432580D0216BFED80011C1D5 /* draw_masked_normals.json */,
+				432580D1216BFED80011C1D5 /* draw_masked_normals.metal */,
 			);
-			path = draw_mask;
+			path = draw_masked_normals;
 			sourceTree = "<group>";
 		};
 		43BDDEBA216B335B00EACA3B = {
@@ -102,13 +106,23 @@
 				43BDDED8216B349500EACA3B /* GameScene.swift */,
 				432580CE216BA8D50011C1D5 /* draw_highlight */,
 				432580C9216BA7DB0011C1D5 /* draw_normals */,
-				432580CF216BFE970011C1D5 /* draw_mask */,
+				432580CF216BFE970011C1D5 /* draw_masked_normals */,
+				43EE8CA9216F568E00924AFF /* draw_masked_position */,
 				43BDDECC216B335E00EACA3B /* Assets.xcassets */,
 				43BDDECE216B335E00EACA3B /* Main.storyboard */,
 				43BDDED1216B335E00EACA3B /* Info.plist */,
 				43BDDED2216B335E00EACA3B /* MetalBox.entitlements */,
 			);
 			path = MetalBox;
+			sourceTree = "<group>";
+		};
+		43EE8CA9216F568E00924AFF /* draw_masked_position */ = {
+			isa = PBXGroup;
+			children = (
+				43EE8CAA216F56C200924AFF /* draw_masked_position.json */,
+				43EE8CAB216F56C200924AFF /* draw_masked_position.metal */,
+			);
+			path = draw_masked_position;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +184,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				43BDDED0216B335E00EACA3B /* Main.storyboard in Resources */,
-				432580D2216C05DB0011C1D5 /* draw_mask.json in Resources */,
+				432580D2216C05DB0011C1D5 /* draw_masked_normals.json in Resources */,
+				43EE8CAC216F588900924AFF /* draw_masked_position.json in Resources */,
 				432580D5216CE01A0011C1D5 /* draw_highlight.json in Resources */,
 				432580CD216BA7EA0011C1D5 /* draw_normals.json in Resources */,
 				43BDDEDD216B35B200EACA3B /* draw_highlight.plist in Resources */,
@@ -188,9 +203,10 @@
 				432580CC216BA7EA0011C1D5 /* draw_normals.metal in Sources */,
 				43BDDED9216B349500EACA3B /* GameScene.swift in Sources */,
 				43BDDEC9216B335B00EACA3B /* GameViewController.swift in Sources */,
+				43EE8CAD216F588C00924AFF /* draw_masked_position.metal in Sources */,
 				43BDDEC7216B335B00EACA3B /* AppDelegate.swift in Sources */,
 				43BDDEDC216B35B200EACA3B /* draw_highlight.metal in Sources */,
-				432580D3216C05DF0011C1D5 /* draw_mask.metal in Sources */,
+				432580D3216C05DF0011C1D5 /* draw_masked_normals.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
