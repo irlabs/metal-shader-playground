@@ -2,15 +2,19 @@
     "passes" : {
 
         "pass_draw_masks" : {
-            "program": "doesntexist",
             "metalVertexShader" : "mask_vertex",
             "metalFragmentShader" : "mask_fragment",
             "inputs" : {
-                "colorSampler" : "COLOR",
                 "aPos" : "vertex_symbol"
             },
             "outputs" : {
                 "color" : "MASK"
+            },
+            "colorStates" : {
+                "clear" : 1
+            },
+            "depthStates" : {
+                "clear" : 1
             },
             "draw" : "DRAW_SCENE",
             "includeCategoryMask": 2
@@ -25,7 +29,7 @@
                 "maskSampler" : "MASK",
             },
             "outputs" : {
-                "color" : "MASK"
+                "color" : "MASK2"
             },
             "colorStates" : {
                 "clear" : 0,
@@ -39,10 +43,10 @@
             "metalFragmentShader" : "blur_fragment_v",
             "inputs" : {
                 "aPos" : "vertex_symbol",
-                "maskSampler" : "MASK",
+                "maskSampler" : "MASK2",
             },
             "outputs" : {
-                "color" : "MASK"
+                "color" : "MASK2"
             },
             "colorStates" : {
                 "clear" : 0,
@@ -58,6 +62,7 @@
                 "aPos" : "vertex_symbol",
                 "colorSampler": "COLOR",
                 "maskSampler" : "MASK",
+                "blurSampler" : "MASK2",
             },
             "outputs" : {
                 "color" : "COLOR"
@@ -73,17 +78,18 @@
         "pass_draw_masks",
         "pass_blur_h",
         "pass_blur_v",
-        "pass_blur_h",
+        "pass_blur_v",
+        "pass_blur_v",
         "pass_blur_v",
         "pass_combine"
     ],
 
     "targets" : {
         "MASK" : {
-            "type" : "color",
-            "format" : "rgb",
-            "size" : "320x320",
-            "scaleFactor" : 1
+            "type" : "color"
+        },
+        "MASK2" : {
+            "type" : "color"
         }
     },
 
