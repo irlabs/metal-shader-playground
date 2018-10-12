@@ -8,7 +8,7 @@
                 "aPos" : "vertex_symbol"
             },
             "outputs" : {
-                "color" : "MASK"
+                "color" : "mask_buffer"
             },
             "colorStates" : {
                 "clear" : 1
@@ -26,10 +26,10 @@
             "metalFragmentShader" : "blur_fragment_h",
             "inputs" : {
                 "aPos" : "vertex_symbol",
-                "maskSampler" : "MASK",
+                "maskSampler" : "mask_buffer",
             },
             "outputs" : {
-                "color" : "MASK2"
+                "color" : "blur_buffer"
             },
             "colorStates" : {
                 "clear" : 0,
@@ -43,10 +43,10 @@
             "metalFragmentShader" : "blur_fragment_v",
             "inputs" : {
                 "aPos" : "vertex_symbol",
-                "maskSampler" : "MASK2",
+                "maskSampler" : "blur_buffer",
             },
             "outputs" : {
-                "color" : "MASK2"
+                "color" : "blur_buffer"
             },
             "colorStates" : {
                 "clear" : 0,
@@ -61,8 +61,8 @@
             "inputs" : {
                 "aPos" : "vertex_symbol",
                 "colorSampler": "COLOR",
-                "maskSampler" : "MASK",
-                "blurSampler" : "MASK2",
+                "maskSampler" : "mask_buffer",
+                "blurSampler" : "blur_buffer",
             },
             "outputs" : {
                 "color" : "COLOR"
@@ -85,10 +85,10 @@
     ],
 
     "targets" : {
-        "MASK" : {
+        "mask_buffer" : {
             "type" : "color"
         },
-        "MASK2" : {
+        "blur_buffer" : {
             "type" : "color"
         }
     },
