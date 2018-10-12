@@ -19,24 +19,21 @@ constexpr sampler s = sampler(coord::normalized,
 
 struct VertexIn_t {
     float4 position [[attribute(SCNVertexSemanticPosition)]];
-    float4 normal   [[attribute(SCNVertexSemanticNormal)]];
-    float4 color    [[attribute(SCNVertexSemanticColor)]];
+//    float4 normal   [[attribute(SCNVertexSemanticNormal)]];
+//    float4 color    [[attribute(SCNVertexSemanticColor)]];
 };
 
 struct VertexOut_t {
     float4 position [[position]];
-    float4 normal;
+//    float4 normal;
     float2 uv;
 };
 
 struct SceneNode {
+    //    float4x4 modelTransform;
+    //    float4x4 modelViewTransform;
     float4x4 modelViewProjectionTransform;
     float4x4 normalTransform;
-//
-//    float4x4 modelTransform;
-//    float4x4 modelViewTransform;
-//    float4x4 normalTransform;
-//    float4x4 modelViewProjectionTransform;
 };
 
 
@@ -47,46 +44,14 @@ vertex VertexOut_t mask_vertex(VertexIn_t in [[stage_in]],
     
     VertexOut_t out;
     out.position = scn_node.modelViewProjectionTransform * in.position;
-    out.normal = scn_node.normalTransform * in.normal;
     return out;
 }
 
 
 fragment half4 mask_fragment(VertexOut_t vert [[stage_in]]) {
     
-    half3 normal = normalize(half3(vert.position.xyz));
-//        return half4(1.0, 1.0, 1.0, 1.0);
-    return half4(normal, 1.0);
+    return half4(1.0, 1.0, 1.0, 1.0);
 }
-
-/*
-vertex VertexOut_t mask_vertex(VertexIn_t in [[stage_in]],
-                                        constant SceneNode& scn_node [[buffer(0)]])
-{
-    VertexOut_t out;
-    out.position = scn_node.modelViewProjectionTransform * in.position;
-    out.normal = scn_node.normalTransform * in.normal;
-    return out;
-
-//
-//    VertexOut_t out;
-//    out.position = scn_node.modelViewProjectionTransform * float4(in.position.xyz, 1.0);
-//    return out;
-};
-
-fragment half4 mask_fragment(VertexOut_t vert [[stage_in]])
-//                                          texture2d<float, access::sample> colorSampler [[texture(0)]])
-{
-//    constexpr sampler sampler2d(coord::normalized, filter::linear, address::repeat);
-//    return half4(1.0);
-//    half3 pos = normalize(half3(vert.position.xyz));
-//    half2 uv = normalize(half2(vert.uv));
-//    return half4(1.0, 1.0, 1.0, 1.0);
-    half3 normal = normalize(half3(vert.position.xyz));
-    return half4(normal, 1.0);
-
-};
-*/
 
 
 // -------- pass_combine
@@ -95,9 +60,7 @@ vertex VertexOut_t combine_vertex(VertexIn_t in [[stage_in]])
 {
     VertexOut_t out;
     out.position = in.position;
-    out.uv = in.position.xy * float2(.5,-.5) + .5;
-
-//    out.uv = float2( (in.position.x + 1.0) * 0.5, 1.0 - (in.position.y + 1.0) * 0.5 );
+    out.uv = in.position.xy * float2(0.5, -0.5) + 0.5;
     return out;
 };
 
@@ -141,7 +104,7 @@ vertex VertexOut_t blur_vertex(VertexIn_t in [[stage_in]])
 {
     VertexOut_t out;
     out.position = in.position;
-    out.uv = float2( (in.position.x + 1.0) * 0.5, 1.0 - (in.position.y + 1.0) * 0.5 );
+    out.uv = in.position.xy * float2(0.5, -0.5) + 0.5;
     return out;
 };
 

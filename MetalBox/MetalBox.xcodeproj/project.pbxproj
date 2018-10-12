@@ -18,7 +18,6 @@
 		43BDDED0216B335E00EACA3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BDDECE216B335E00EACA3B /* Main.storyboard */; };
 		43BDDED9216B349500EACA3B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDED8216B349500EACA3B /* GameScene.swift */; };
 		43BDDEDC216B35B200EACA3B /* draw_highlight.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDEDA216B35B200EACA3B /* draw_highlight.metal */; };
-		43BDDEDD216B35B200EACA3B /* draw_highlight.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43BDDEDB216B35B200EACA3B /* draw_highlight.plist */; };
 		43EE8CAC216F588900924AFF /* draw_masked_position.json in Resources */ = {isa = PBXBuildFile; fileRef = 43EE8CAA216F56C200924AFF /* draw_masked_position.json */; };
 		43EE8CAD216F588C00924AFF /* draw_masked_position.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43EE8CAB216F56C200924AFF /* draw_masked_position.metal */; };
 /* End PBXBuildFile section */
@@ -38,7 +37,6 @@
 		43BDDED2216B335E00EACA3B /* MetalBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetalBox.entitlements; sourceTree = "<group>"; };
 		43BDDED8216B349500EACA3B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		43BDDEDA216B35B200EACA3B /* draw_highlight.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = draw_highlight.metal; sourceTree = "<group>"; };
-		43BDDEDB216B35B200EACA3B /* draw_highlight.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = draw_highlight.plist; sourceTree = "<group>"; };
 		43EE8CAA216F56C200924AFF /* draw_masked_position.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = draw_masked_position.json; sourceTree = "<group>"; };
 		43EE8CAB216F56C200924AFF /* draw_masked_position.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = draw_masked_position.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,7 +66,6 @@
 			children = (
 				432580D4216CDBBD0011C1D5 /* draw_highlight.json */,
 				43BDDEDA216B35B200EACA3B /* draw_highlight.metal */,
-				43BDDEDB216B35B200EACA3B /* draw_highlight.plist */,
 			);
 			path = draw_highlight;
 			sourceTree = "<group>";
@@ -188,7 +185,6 @@
 				43EE8CAC216F588900924AFF /* draw_masked_position.json in Resources */,
 				432580D5216CE01A0011C1D5 /* draw_highlight.json in Resources */,
 				432580CD216BA7EA0011C1D5 /* draw_normals.json in Resources */,
-				43BDDEDD216B35B200EACA3B /* draw_highlight.plist in Resources */,
 				43BDDECD216B335E00EACA3B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
