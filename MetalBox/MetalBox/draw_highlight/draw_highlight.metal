@@ -19,21 +19,30 @@ constexpr sampler s = sampler(coord::normalized,
 
 struct VertexIn_t {
     float4 position [[attribute(SCNVertexSemanticPosition)]];
-//    float4 normal   [[attribute(SCNVertexSemanticNormal)]];
-//    float4 color    [[attribute(SCNVertexSemanticColor)]];
+    /*
+     // Other possible input parameters:
+    float4 normal   [[attribute(SCNVertexSemanticNormal)]];
+    float4 color    [[attribute(SCNVertexSemanticColor)]];
+     */
 };
 
 struct VertexOut_t {
     float4 position [[position]];
-//    float4 normal;
     float2 uv;
+    /*
+     // Other possible output parameters:
+    float4 normal;
+     */
 };
 
 struct SceneNode {
-    //    float4x4 modelTransform;
-    //    float4x4 modelViewTransform;
     float4x4 modelViewProjectionTransform;
     float4x4 normalTransform;
+    /*
+     // Other possible node properties:
+    float4x4 modelTransform;
+    float4x4 modelViewTransform;
+     */
 };
 
 
@@ -75,26 +84,19 @@ fragment half4 combine_fragment(VertexOut_t vert [[stage_in]],
     float4 maskColor = maskSampler.sample(s, vert.uv);
     float4 blurColor = blurSampler.sample(s, vert.uv);
     
-    // Don't render glow on top of the object itself
+    // Don't render glow on top of the object itself (or the background)
+    // (Only if blur is at least visible & not masked by object itself)
     if ( (blurColor.r + blurColor.g + blurColor.b) > 0.01) {
         if ( (maskColor.r + maskColor.g + maskColor.b) < 0.01 ) {
-//            return half4(maskColor);
-            
-        float3 glowColor = float3(1.0, 1.0, 1.0); // White glow
-            
+
+        // Create (semi-transparent) white glow
+        float3 glowColor = float3(1.0, 1.0, 1.0);
         float alpha = blurColor.r;
         float3 out = FragmentColor.rgb * ( 1.0 - alpha ) + alpha * glowColor;
         return half4( float4(out.rgb, 1.0) );
         }
     }
     return half4(FragmentColor);
-    
-//    float3 glowColor = float3(1.0, 1.0, 0.0); // Yellow
-//    
-//    float alpha = maskColor.r;
-//    float3 out = FragmentColor.rgb * ( 1.0 - alpha ) + alpha * glowColor;
-//    return half4( float4(out.rgb, 1.0) );
-    
 }
 
 
