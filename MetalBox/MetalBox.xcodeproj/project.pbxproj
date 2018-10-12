@@ -7,42 +7,71 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		432580CC216BA7EA0011C1D5 /* draw_normals.metal in Sources */ = {isa = PBXBuildFile; fileRef = 432580CA216BA7EA0011C1D5 /* draw_normals.metal */; };
-		432580CD216BA7EA0011C1D5 /* draw_normals.json in Resources */ = {isa = PBXBuildFile; fileRef = 432580CB216BA7EA0011C1D5 /* draw_normals.json */; };
-		432580D2216C05DB0011C1D5 /* draw_masked_normals.json in Resources */ = {isa = PBXBuildFile; fileRef = 432580D0216BFED80011C1D5 /* draw_masked_normals.json */; };
-		432580D3216C05DF0011C1D5 /* draw_masked_normals.metal in Sources */ = {isa = PBXBuildFile; fileRef = 432580D1216BFED80011C1D5 /* draw_masked_normals.metal */; };
-		432580D5216CE01A0011C1D5 /* draw_highlight.json in Resources */ = {isa = PBXBuildFile; fileRef = 432580D4216CDBBD0011C1D5 /* draw_highlight.json */; };
-		43BDDEC7216B335B00EACA3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDEC6216B335B00EACA3B /* AppDelegate.swift */; };
-		43BDDEC9216B335B00EACA3B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDEC8216B335B00EACA3B /* GameViewController.swift */; };
-		43BDDECD216B335E00EACA3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BDDECC216B335E00EACA3B /* Assets.xcassets */; };
-		43BDDED0216B335E00EACA3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BDDECE216B335E00EACA3B /* Main.storyboard */; };
-		43BDDED9216B349500EACA3B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDED8216B349500EACA3B /* GameScene.swift */; };
-		43BDDEDC216B35B200EACA3B /* draw_highlight.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43BDDEDA216B35B200EACA3B /* draw_highlight.metal */; };
-		43EE8CAC216F588900924AFF /* draw_masked_position.json in Resources */ = {isa = PBXBuildFile; fileRef = 43EE8CAA216F56C200924AFF /* draw_masked_position.json */; };
-		43EE8CAD216F588C00924AFF /* draw_masked_position.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43EE8CAB216F56C200924AFF /* draw_masked_position.metal */; };
+		43BF1AE92171569E00B013FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1AE82171569E00B013FD /* AppDelegate.swift */; };
+		43BF1AEB2171569E00B013FD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1AEA2171569E00B013FD /* GameViewController.swift */; };
+		43BF1AEE2171569E00B013FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BF1AEC2171569E00B013FD /* Main.storyboard */; };
+		43BF1AF12171569E00B013FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BF1AEF2171569E00B013FD /* LaunchScreen.storyboard */; };
+		43BF1AFA2171569E00B013FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1AF92171569E00B013FD /* AppDelegate.swift */; };
+		43BF1AFC2171569E00B013FD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1AFB2171569E00B013FD /* GameViewController.swift */; };
+		43BF1AFF2171569E00B013FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BF1AFD2171569E00B013FD /* Main.storyboard */; };
+		43BF1B012171569E00B013FD /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1ADE2171569D00B013FD /* GameController.swift */; };
+		43BF1B022171569E00B013FD /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1ADE2171569D00B013FD /* GameController.swift */; };
+		43BF1B052171569E00B013FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BF1AE02171569E00B013FD /* Assets.xcassets */; };
+		43BF1B062171569E00B013FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BF1AE02171569E00B013FD /* Assets.xcassets */; };
+		43BF1B102171597600B013FD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1B0F2171597600B013FD /* GameScene.swift */; };
+		43BF1B112171597600B013FD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1B0F2171597600B013FD /* GameScene.swift */; };
+		43BF1B2B217162E800B013FD /* draw_highlight.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1B29217162E800B013FD /* draw_highlight.metal */; };
+		43BF1B2C217162E800B013FD /* draw_highlight.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1B29217162E800B013FD /* draw_highlight.metal */; };
+		43BF1B2D217162E800B013FD /* draw_highlight.json in Resources */ = {isa = PBXBuildFile; fileRef = 43BF1B2A217162E800B013FD /* draw_highlight.json */; };
+		43BF1B2E217162E800B013FD /* draw_highlight.json in Resources */ = {isa = PBXBuildFile; fileRef = 43BF1B2A217162E800B013FD /* draw_highlight.json */; };
+		43BF1B312171639300B013FD /* draw_normals.json in Resources */ = {isa = PBXBuildFile; fileRef = 43BF1B302171638600B013FD /* draw_normals.json */; };
+		43BF1B322171639300B013FD /* draw_normals.json in Resources */ = {isa = PBXBuildFile; fileRef = 43BF1B302171638600B013FD /* draw_normals.json */; };
+		43BF1B332171639600B013FD /* draw_normals.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1B2F2171638500B013FD /* draw_normals.metal */; };
+		43BF1B342171639700B013FD /* draw_normals.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1B2F2171638500B013FD /* draw_normals.metal */; };
+		43BF1B37217163A100B013FD /* draw_masked_normals.json in Resources */ = {isa = PBXBuildFile; fileRef = 43BF1B35217163A100B013FD /* draw_masked_normals.json */; };
+		43BF1B38217163A100B013FD /* draw_masked_normals.json in Resources */ = {isa = PBXBuildFile; fileRef = 43BF1B35217163A100B013FD /* draw_masked_normals.json */; };
+		43BF1B39217163A100B013FD /* draw_masked_normals.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1B36217163A100B013FD /* draw_masked_normals.metal */; };
+		43BF1B3A217163A100B013FD /* draw_masked_normals.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1B36217163A100B013FD /* draw_masked_normals.metal */; };
+		43BF1B3D217163B400B013FD /* draw_masked_position.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1B3B217163B400B013FD /* draw_masked_position.metal */; };
+		43BF1B3E217163B400B013FD /* draw_masked_position.metal in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1B3B217163B400B013FD /* draw_masked_position.metal */; };
+		43BF1B3F217163B400B013FD /* draw_masked_position.json in Resources */ = {isa = PBXBuildFile; fileRef = 43BF1B3C217163B400B013FD /* draw_masked_position.json */; };
+		43BF1B40217163B400B013FD /* draw_masked_position.json in Resources */ = {isa = PBXBuildFile; fileRef = 43BF1B3C217163B400B013FD /* draw_masked_position.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		432580CA216BA7EA0011C1D5 /* draw_normals.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = draw_normals.metal; sourceTree = "<group>"; };
-		432580CB216BA7EA0011C1D5 /* draw_normals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = draw_normals.json; sourceTree = "<group>"; };
-		432580D0216BFED80011C1D5 /* draw_masked_normals.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = draw_masked_normals.json; sourceTree = "<group>"; };
-		432580D1216BFED80011C1D5 /* draw_masked_normals.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = draw_masked_normals.metal; sourceTree = "<group>"; };
-		432580D4216CDBBD0011C1D5 /* draw_highlight.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = draw_highlight.json; sourceTree = "<group>"; };
-		43BDDEC3216B335B00EACA3B /* MetalBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		43BDDEC6216B335B00EACA3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		43BDDEC8216B335B00EACA3B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		43BDDECC216B335E00EACA3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		43BDDECF216B335E00EACA3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		43BDDED1216B335E00EACA3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43BDDED2216B335E00EACA3B /* MetalBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetalBox.entitlements; sourceTree = "<group>"; };
-		43BDDED8216B349500EACA3B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		43BDDEDA216B35B200EACA3B /* draw_highlight.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = draw_highlight.metal; sourceTree = "<group>"; };
-		43EE8CAA216F56C200924AFF /* draw_masked_position.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = draw_masked_position.json; sourceTree = "<group>"; };
-		43EE8CAB216F56C200924AFF /* draw_masked_position.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = draw_masked_position.metal; sourceTree = "<group>"; };
+		43BF1ADE2171569D00B013FD /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		43BF1AE02171569E00B013FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43BF1AE52171569E00B013FD /* MetalBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43BF1AE82171569E00B013FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		43BF1AEA2171569E00B013FD /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		43BF1AED2171569E00B013FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		43BF1AF02171569E00B013FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		43BF1AF22171569E00B013FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43BF1AF72171569E00B013FD /* MetalBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43BF1AF92171569E00B013FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		43BF1AFB2171569E00B013FD /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		43BF1AFE2171569E00B013FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		43BF1B002171569E00B013FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43BF1B0F2171597600B013FD /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		43BF1B29217162E800B013FD /* draw_highlight.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = draw_highlight.metal; sourceTree = "<group>"; };
+		43BF1B2A217162E800B013FD /* draw_highlight.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = draw_highlight.json; sourceTree = "<group>"; };
+		43BF1B2F2171638500B013FD /* draw_normals.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = draw_normals.metal; sourceTree = "<group>"; };
+		43BF1B302171638600B013FD /* draw_normals.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = draw_normals.json; sourceTree = "<group>"; };
+		43BF1B35217163A100B013FD /* draw_masked_normals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = draw_masked_normals.json; sourceTree = "<group>"; };
+		43BF1B36217163A100B013FD /* draw_masked_normals.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = draw_masked_normals.metal; sourceTree = "<group>"; };
+		43BF1B3B217163B400B013FD /* draw_masked_position.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = draw_masked_position.metal; sourceTree = "<group>"; };
+		43BF1B3C217163B400B013FD /* draw_masked_position.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = draw_masked_position.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		43BDDEC0216B335B00EACA3B /* Frameworks */ = {
+		43BF1AE22171569E00B013FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BF1AF42171569E00B013FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -52,72 +81,102 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		432580C9216BA7DB0011C1D5 /* draw_normals */ = {
+		43BF1AD82171569D00B013FD = {
 			isa = PBXGroup;
 			children = (
-				432580CB216BA7EA0011C1D5 /* draw_normals.json */,
-				432580CA216BA7EA0011C1D5 /* draw_normals.metal */,
-			);
-			path = draw_normals;
-			sourceTree = "<group>";
-		};
-		432580CE216BA8D50011C1D5 /* draw_highlight */ = {
-			isa = PBXGroup;
-			children = (
-				432580D4216CDBBD0011C1D5 /* draw_highlight.json */,
-				43BDDEDA216B35B200EACA3B /* draw_highlight.metal */,
-			);
-			path = draw_highlight;
-			sourceTree = "<group>";
-		};
-		432580CF216BFE970011C1D5 /* draw_masked_normals */ = {
-			isa = PBXGroup;
-			children = (
-				432580D0216BFED80011C1D5 /* draw_masked_normals.json */,
-				432580D1216BFED80011C1D5 /* draw_masked_normals.metal */,
-			);
-			path = draw_masked_normals;
-			sourceTree = "<group>";
-		};
-		43BDDEBA216B335B00EACA3B = {
-			isa = PBXGroup;
-			children = (
-				43BDDEC5216B335B00EACA3B /* MetalBox */,
-				43BDDEC4216B335B00EACA3B /* Products */,
+				43BF1ADD2171569D00B013FD /* MetalBox Shared */,
+				43BF1AE72171569E00B013FD /* MetalBox iOS */,
+				43BF1AF82171569E00B013FD /* MetalBox macOS */,
+				43BF1AE62171569E00B013FD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		43BDDEC4216B335B00EACA3B /* Products */ = {
+		43BF1ADD2171569D00B013FD /* MetalBox Shared */ = {
 			isa = PBXGroup;
 			children = (
-				43BDDEC3216B335B00EACA3B /* MetalBox.app */,
+				43BF1ADE2171569D00B013FD /* GameController.swift */,
+				43BF1B0F2171597600B013FD /* GameScene.swift */,
+				43BF1B122171606300B013FD /* Shaders */,
+				43BF1AE02171569E00B013FD /* Assets.xcassets */,
+			);
+			path = "MetalBox Shared";
+			sourceTree = "<group>";
+		};
+		43BF1AE62171569E00B013FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43BF1AE52171569E00B013FD /* MetalBox.app */,
+				43BF1AF72171569E00B013FD /* MetalBox.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		43BDDEC5216B335B00EACA3B /* MetalBox */ = {
+		43BF1AE72171569E00B013FD /* MetalBox iOS */ = {
 			isa = PBXGroup;
 			children = (
-				43BDDEC6216B335B00EACA3B /* AppDelegate.swift */,
-				43BDDEC8216B335B00EACA3B /* GameViewController.swift */,
-				43BDDED8216B349500EACA3B /* GameScene.swift */,
-				432580CE216BA8D50011C1D5 /* draw_highlight */,
-				432580C9216BA7DB0011C1D5 /* draw_normals */,
-				432580CF216BFE970011C1D5 /* draw_masked_normals */,
-				43EE8CA9216F568E00924AFF /* draw_masked_position */,
-				43BDDECC216B335E00EACA3B /* Assets.xcassets */,
-				43BDDECE216B335E00EACA3B /* Main.storyboard */,
-				43BDDED1216B335E00EACA3B /* Info.plist */,
-				43BDDED2216B335E00EACA3B /* MetalBox.entitlements */,
+				43BF1AE82171569E00B013FD /* AppDelegate.swift */,
+				43BF1AEA2171569E00B013FD /* GameViewController.swift */,
+				43BF1AEC2171569E00B013FD /* Main.storyboard */,
+				43BF1AEF2171569E00B013FD /* LaunchScreen.storyboard */,
+				43BF1AF22171569E00B013FD /* Info.plist */,
 			);
-			path = MetalBox;
+			path = "MetalBox iOS";
 			sourceTree = "<group>";
 		};
-		43EE8CA9216F568E00924AFF /* draw_masked_position */ = {
+		43BF1AF82171569E00B013FD /* MetalBox macOS */ = {
 			isa = PBXGroup;
 			children = (
-				43EE8CAA216F56C200924AFF /* draw_masked_position.json */,
-				43EE8CAB216F56C200924AFF /* draw_masked_position.metal */,
+				43BF1AF92171569E00B013FD /* AppDelegate.swift */,
+				43BF1AFB2171569E00B013FD /* GameViewController.swift */,
+				43BF1AFD2171569E00B013FD /* Main.storyboard */,
+				43BF1B002171569E00B013FD /* Info.plist */,
+			);
+			path = "MetalBox macOS";
+			sourceTree = "<group>";
+		};
+		43BF1B122171606300B013FD /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				43BF1B1F217160C300B013FD /* draw_highlight */,
+				43BF1B26217161B900B013FD /* draw_normals */,
+				43BF1B27217161C400B013FD /* draw_masked_normals */,
+				43BF1B28217161D300B013FD /* draw_masked_position */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		43BF1B1F217160C300B013FD /* draw_highlight */ = {
+			isa = PBXGroup;
+			children = (
+				43BF1B2A217162E800B013FD /* draw_highlight.json */,
+				43BF1B29217162E800B013FD /* draw_highlight.metal */,
+			);
+			path = draw_highlight;
+			sourceTree = "<group>";
+		};
+		43BF1B26217161B900B013FD /* draw_normals */ = {
+			isa = PBXGroup;
+			children = (
+				43BF1B302171638600B013FD /* draw_normals.json */,
+				43BF1B2F2171638500B013FD /* draw_normals.metal */,
+			);
+			path = draw_normals;
+			sourceTree = "<group>";
+		};
+		43BF1B27217161C400B013FD /* draw_masked_normals */ = {
+			isa = PBXGroup;
+			children = (
+				43BF1B35217163A100B013FD /* draw_masked_normals.json */,
+				43BF1B36217163A100B013FD /* draw_masked_normals.metal */,
+			);
+			path = draw_masked_normals;
+			sourceTree = "<group>";
+		};
+		43BF1B28217161D300B013FD /* draw_masked_position */ = {
+			isa = PBXGroup;
+			children = (
+				43BF1B3C217163B400B013FD /* draw_masked_position.json */,
+				43BF1B3B217163B400B013FD /* draw_masked_position.metal */,
 			);
 			path = draw_masked_position;
 			sourceTree = "<group>";
@@ -125,39 +184,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		43BDDEC2216B335B00EACA3B /* MetalBox */ = {
+		43BF1AE42171569E00B013FD /* MetalBox iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 43BDDED5216B335E00EACA3B /* Build configuration list for PBXNativeTarget "MetalBox" */;
+			buildConfigurationList = 43BF1B092171569E00B013FD /* Build configuration list for PBXNativeTarget "MetalBox iOS" */;
 			buildPhases = (
-				43BDDEBF216B335B00EACA3B /* Sources */,
-				43BDDEC0216B335B00EACA3B /* Frameworks */,
-				43BDDEC1216B335B00EACA3B /* Resources */,
+				43BF1AE12171569E00B013FD /* Sources */,
+				43BF1AE22171569E00B013FD /* Frameworks */,
+				43BF1AE32171569E00B013FD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MetalBox;
-			productName = MetalBox;
-			productReference = 43BDDEC3216B335B00EACA3B /* MetalBox.app */;
+			name = "MetalBox iOS";
+			productName = "MetalBox iOS";
+			productReference = 43BF1AE52171569E00B013FD /* MetalBox.app */;
+			productType = "com.apple.product-type.application";
+		};
+		43BF1AF62171569E00B013FD /* MetalBox macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43BF1B0C2171569E00B013FD /* Build configuration list for PBXNativeTarget "MetalBox macOS" */;
+			buildPhases = (
+				43BF1AF32171569E00B013FD /* Sources */,
+				43BF1AF42171569E00B013FD /* Frameworks */,
+				43BF1AF52171569E00B013FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MetalBox macOS";
+			productName = "MetalBox macOS";
+			productReference = 43BF1AF72171569E00B013FD /* MetalBox.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		43BDDEBB216B335B00EACA3B /* Project object */ = {
+		43BF1AD92171569D00B013FD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = IRLabs;
 				TargetAttributes = {
-					43BDDEC2216B335B00EACA3B = {
+					43BF1AE42171569E00B013FD = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					43BF1AF62171569E00B013FD = {
 						CreatedOnToolsVersion = 10.0;
 					};
 				};
 			};
-			buildConfigurationList = 43BDDEBE216B335B00EACA3B /* Build configuration list for PBXProject "MetalBox" */;
+			buildConfigurationList = 43BF1ADC2171569D00B013FD /* Build configuration list for PBXProject "MetalBox" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -165,54 +244,101 @@
 				en,
 				Base,
 			);
-			mainGroup = 43BDDEBA216B335B00EACA3B;
-			productRefGroup = 43BDDEC4216B335B00EACA3B /* Products */;
+			mainGroup = 43BF1AD82171569D00B013FD;
+			productRefGroup = 43BF1AE62171569E00B013FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				43BDDEC2216B335B00EACA3B /* MetalBox */,
+				43BF1AE42171569E00B013FD /* MetalBox iOS */,
+				43BF1AF62171569E00B013FD /* MetalBox macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		43BDDEC1216B335B00EACA3B /* Resources */ = {
+		43BF1AE32171569E00B013FD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43BDDED0216B335E00EACA3B /* Main.storyboard in Resources */,
-				432580D2216C05DB0011C1D5 /* draw_masked_normals.json in Resources */,
-				43EE8CAC216F588900924AFF /* draw_masked_position.json in Resources */,
-				432580D5216CE01A0011C1D5 /* draw_highlight.json in Resources */,
-				432580CD216BA7EA0011C1D5 /* draw_normals.json in Resources */,
-				43BDDECD216B335E00EACA3B /* Assets.xcassets in Resources */,
+				43BF1B2D217162E800B013FD /* draw_highlight.json in Resources */,
+				43BF1B312171639300B013FD /* draw_normals.json in Resources */,
+				43BF1B3F217163B400B013FD /* draw_masked_position.json in Resources */,
+				43BF1AEE2171569E00B013FD /* Main.storyboard in Resources */,
+				43BF1B37217163A100B013FD /* draw_masked_normals.json in Resources */,
+				43BF1AF12171569E00B013FD /* LaunchScreen.storyboard in Resources */,
+				43BF1B052171569E00B013FD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BF1AF52171569E00B013FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BF1B38217163A100B013FD /* draw_masked_normals.json in Resources */,
+				43BF1AFF2171569E00B013FD /* Main.storyboard in Resources */,
+				43BF1B062171569E00B013FD /* Assets.xcassets in Resources */,
+				43BF1B322171639300B013FD /* draw_normals.json in Resources */,
+				43BF1B2E217162E800B013FD /* draw_highlight.json in Resources */,
+				43BF1B40217163B400B013FD /* draw_masked_position.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		43BDDEBF216B335B00EACA3B /* Sources */ = {
+		43BF1AE12171569E00B013FD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				432580CC216BA7EA0011C1D5 /* draw_normals.metal in Sources */,
-				43BDDED9216B349500EACA3B /* GameScene.swift in Sources */,
-				43BDDEC9216B335B00EACA3B /* GameViewController.swift in Sources */,
-				43EE8CAD216F588C00924AFF /* draw_masked_position.metal in Sources */,
-				43BDDEC7216B335B00EACA3B /* AppDelegate.swift in Sources */,
-				43BDDEDC216B35B200EACA3B /* draw_highlight.metal in Sources */,
-				432580D3216C05DF0011C1D5 /* draw_masked_normals.metal in Sources */,
+				43BF1B332171639600B013FD /* draw_normals.metal in Sources */,
+				43BF1B3D217163B400B013FD /* draw_masked_position.metal in Sources */,
+				43BF1AEB2171569E00B013FD /* GameViewController.swift in Sources */,
+				43BF1B012171569E00B013FD /* GameController.swift in Sources */,
+				43BF1B102171597600B013FD /* GameScene.swift in Sources */,
+				43BF1B2B217162E800B013FD /* draw_highlight.metal in Sources */,
+				43BF1AE92171569E00B013FD /* AppDelegate.swift in Sources */,
+				43BF1B39217163A100B013FD /* draw_masked_normals.metal in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BF1AF32171569E00B013FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BF1B342171639700B013FD /* draw_normals.metal in Sources */,
+				43BF1B3E217163B400B013FD /* draw_masked_position.metal in Sources */,
+				43BF1AFC2171569E00B013FD /* GameViewController.swift in Sources */,
+				43BF1B022171569E00B013FD /* GameController.swift in Sources */,
+				43BF1B112171597600B013FD /* GameScene.swift in Sources */,
+				43BF1B2C217162E800B013FD /* draw_highlight.metal in Sources */,
+				43BF1AFA2171569E00B013FD /* AppDelegate.swift in Sources */,
+				43BF1B3A217163A100B013FD /* draw_masked_normals.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		43BDDECE216B335E00EACA3B /* Main.storyboard */ = {
+		43BF1AEC2171569E00B013FD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				43BDDECF216B335E00EACA3B /* Base */,
+				43BF1AED2171569E00B013FD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		43BF1AEF2171569E00B013FD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43BF1AF02171569E00B013FD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		43BF1AFD2171569E00B013FD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43BF1AFE2171569E00B013FD /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -220,7 +346,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		43BDDED3216B335E00EACA3B /* Debug */ = {
+		43BF1B072171569E00B013FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -252,7 +378,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -271,17 +396,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		43BDDED4216B335E00EACA3B /* Release */ = {
+		43BF1B082171569E00B013FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -313,7 +436,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -326,49 +448,94 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
-		43BDDED6216B335E00EACA3B /* Debug */ = {
+		43BF1B0A2171569E00B013FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = MetalBox/MetalBox.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8ZR3XDMKF;
+				INFOPLIST_FILE = "MetalBox iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nl.irlabs.MetalBox;
+				PRODUCT_NAME = MetalBox;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		43BF1B0B2171569E00B013FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8ZR3XDMKF;
+				INFOPLIST_FILE = "MetalBox iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nl.irlabs.MetalBox;
+				PRODUCT_NAME = MetalBox;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		43BF1B0D2171569E00B013FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = B8ZR3XDMKF;
-				INFOPLIST_FILE = MetalBox/Info.plist;
+				INFOPLIST_FILE = "MetalBox macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nl.irlabs.nl.MetalBox;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.irlabs.MetalBox;
+				PRODUCT_NAME = MetalBox;
+				SDKROOT = macosx;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
-		43BDDED7216B335E00EACA3B /* Release */ = {
+		43BF1B0E2171569E00B013FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = MetalBox/MetalBox.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = B8ZR3XDMKF;
-				INFOPLIST_FILE = MetalBox/Info.plist;
+				INFOPLIST_FILE = "MetalBox macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nl.irlabs.nl.MetalBox;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.irlabs.MetalBox;
+				PRODUCT_NAME = MetalBox;
+				SDKROOT = macosx;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
@@ -376,25 +543,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		43BDDEBE216B335B00EACA3B /* Build configuration list for PBXProject "MetalBox" */ = {
+		43BF1ADC2171569D00B013FD /* Build configuration list for PBXProject "MetalBox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				43BDDED3216B335E00EACA3B /* Debug */,
-				43BDDED4216B335E00EACA3B /* Release */,
+				43BF1B072171569E00B013FD /* Debug */,
+				43BF1B082171569E00B013FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		43BDDED5216B335E00EACA3B /* Build configuration list for PBXNativeTarget "MetalBox" */ = {
+		43BF1B092171569E00B013FD /* Build configuration list for PBXNativeTarget "MetalBox iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				43BDDED6216B335E00EACA3B /* Debug */,
-				43BDDED7216B335E00EACA3B /* Release */,
+				43BF1B0A2171569E00B013FD /* Debug */,
+				43BF1B0B2171569E00B013FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43BF1B0C2171569E00B013FD /* Build configuration list for PBXNativeTarget "MetalBox macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43BF1B0D2171569E00B013FD /* Debug */,
+				43BF1B0E2171569E00B013FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 43BDDEBB216B335B00EACA3B /* Project object */;
+	rootObject = 43BF1AD92171569D00B013FD /* Project object */;
 }
