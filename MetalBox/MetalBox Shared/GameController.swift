@@ -117,7 +117,11 @@ class GameController: NSObject, SCNSceneRendererDelegate {
             fatalError("SCNTechnique Failed to initialize")
         }
         
+    #if targetEnvironment(simulator)
+        print("WARNING: Metal Shaders will be disabled on a Simulator")
+    #else
         scnView.technique = technique
+    #endif
     }
 
     
