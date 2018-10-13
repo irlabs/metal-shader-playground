@@ -63,6 +63,7 @@
                 "colorSampler": "COLOR",
                 "maskSampler" : "mask_buffer",
                 "blurSampler" : "blur_buffer",
+                "my_variable" : "my_variable_symbol",
             },
             "outputs" : {
                 "color" : "COLOR"
@@ -96,6 +97,9 @@
     "symbols" : {
         "vertex_symbol" : {
             "semantic" : "vertex"
+        },
+        "my_variable_symbol" : {
+            "type" : "float"
         },
     }
 }

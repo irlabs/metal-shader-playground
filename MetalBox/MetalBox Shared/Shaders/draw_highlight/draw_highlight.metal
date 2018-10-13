@@ -45,6 +45,9 @@ struct SceneNode {
      */
 };
 
+struct VariableInputs {
+    float my_variable;
+};
 
 // -------- pass_draw_masks
 
@@ -122,7 +125,8 @@ vertex VertexOut_t combine_vertex(VertexIn_t in [[stage_in]]) {
 fragment half4 combine_fragment(VertexOut_t vert [[stage_in]],
                                             texture2d<float, access::sample> colorSampler [[texture(0)]],
                                             texture2d<float, access::sample> maskSampler [[texture(1)]],
-                                            texture2d<float, access::sample> blurSampler [[texture(2)]])
+                                            texture2d<float, access::sample> blurSampler [[texture(2)]],
+                                            constant VariableInputs& variablesIn [[buffer(0)]])
 {
     
     float4 FragmentColor = colorSampler.sample( s, vert.uv);
@@ -135,7 +139,7 @@ fragment half4 combine_fragment(VertexOut_t vert [[stage_in]],
         if ( (maskColor.r + maskColor.g + maskColor.b) < 0.01 ) {
 
         // Create (semi-transparent) white glow
-        float3 glowColor = float3(1.0);
+        float3 glowColor = float3(1.0, variablesIn.my_variable, variablesIn.my_variable);
         float alpha = blurColor.r;
         float3 out = FragmentColor.rgb * ( 1.0 - alpha ) + alpha * glowColor;
         return half4( float4(out.rgb, 1.0) );

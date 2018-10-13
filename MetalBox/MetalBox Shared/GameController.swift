@@ -29,6 +29,7 @@ class GameController: NSObject, SCNSceneRendererDelegate {
 
     let scene: GameScene
     let sceneRenderer: SCNSceneRenderer
+    var technique: SCNTechnique?
     
     init(sceneRenderer renderer: SCNSceneRenderer) {
         sceneRenderer = renderer
@@ -122,6 +123,9 @@ class GameController: NSObject, SCNSceneRendererDelegate {
     #else
         scnView.technique = technique
     #endif
+
+        self.technique = technique
+
     }
 
     
@@ -155,6 +159,14 @@ class GameController: NSObject, SCNSceneRendererDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         // Called before each frame is rendered
+        if let technique = technique {
+            
+            // Saw tooth animation for 2 seconds
+            var t = time.truncatingRemainder(dividingBy: 2)
+            if t > 1 { t = 2 - t }
+            
+            technique.setObject(NSNumber(value: t), forKeyedSubscript: NSString(string: "my_variable_symbol"))
+        }
     }
 
 }
