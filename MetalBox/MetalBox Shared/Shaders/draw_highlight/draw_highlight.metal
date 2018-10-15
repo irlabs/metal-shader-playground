@@ -49,6 +49,18 @@ struct VariableInputs {
     float my_variable;
 };
 
+
+// -------- shared shaders
+
+vertex VertexOut_t pass_through_vertex(VertexIn_t in [[stage_in]]) {
+    
+    VertexOut_t out;
+    out.position = in.position;
+    out.uv = in.position.xy * float2(0.5, -0.5) + 0.5;
+    return out;
+}
+
+
 // -------- pass_draw_masks
 
 vertex VertexOut_t mask_vertex(VertexIn_t in [[stage_in]],
@@ -67,14 +79,6 @@ fragment half4 mask_fragment() {
 
 
 // -------- Blur passes: pass_blur_h + pass_blur_v
-
-vertex VertexOut_t blur_vertex(VertexIn_t in [[stage_in]]) {
-    
-    VertexOut_t out;
-    out.position = in.position;
-    out.uv = in.position.xy * float2(0.5, -0.5) + 0.5;
-    return out;
-}
 
 // http://rastergrid.com/blog/2010/09/efficient-gaussian-blur-with-linear-sampling/
 constant float offset[] = { 0.0, 1.0, 2.0, 3.0, 4.0 };
@@ -112,15 +116,6 @@ fragment half4 blur_fragment_v(VertexOut_t vert [[stage_in]],
 
 
 // -------- pass_combine
-
-vertex VertexOut_t combine_vertex(VertexIn_t in [[stage_in]]) {
-    
-    VertexOut_t out;
-    out.position = in.position;
-    out.uv = in.position.xy * float2(0.5, -0.5) + 0.5;
-    return out;
-}
-
 
 fragment half4 combine_fragment(VertexOut_t vert [[stage_in]],
                                             texture2d<float, access::sample> colorSampler [[texture(0)]],

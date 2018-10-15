@@ -1,7 +1,7 @@
 # TODO to create a better blur
 
-- [ ] merge working shader back to master
-- [ ] new feature/improve_blur
+- [x] merge working shader back to master
+- [x] new feature/improve_blur
 - [ ] simply pass_vertex function (reuse)
 - [ ] extra pass: `pass_initial_blur_h`
 - [ ] 5 passes (10 total) to see effect
