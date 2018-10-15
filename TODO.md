@@ -2,9 +2,9 @@
 
 - [x] merge working shader back to master
 - [x] new feature/improve_blur
-- [ ] simply pass_vertex function (reuse)
-- [ ] extra pass: `pass_initial_blur_h`
-- [ ] 5 passes (10 total) to see effect
+- [x] simply pass_vertex function (reuse)
+- [x] extra pass: `pass_initial_blur_h`
+- [x] 5 passes (10 total) to see effect
 - [ ] mask target as r8 or r16
 - [ ] blur function 17tap
 - [ ] calculate offset and weights with http://dev.theomader.com/gaussian-kernel-calculator/ or https://github.com/manuelbua/blur-ninja
