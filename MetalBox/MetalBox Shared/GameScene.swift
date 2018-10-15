@@ -25,7 +25,7 @@ class GameScene: SCNScene {
         
         ambientLight.type = SCNLight.LightType.ambient
         let ambiTint: CGFloat = 0.45
-        ambientLight.color = NSColor(red: ambiTint, green: ambiTint, blue: ambiTint, alpha: 1.0)
+        ambientLight.color = SCNColor(red: ambiTint, green: ambiTint, blue: ambiTint, alpha: 1.0)
         
         cameraNode.camera = camera
         cameraNode.light = ambientLight
@@ -40,7 +40,7 @@ class GameScene: SCNScene {
         
         let directTint: CGFloat = 0.83
         directLight.type = SCNLight.LightType.directional // .spot // .omni // .directional
-        directLight.color = NSColor(red: directTint, green: directTint, blue: directTint, alpha: 1.0)
+        directLight.color = SCNColor(red: directTint, green: directTint, blue: directTint, alpha: 1.0)
         directLight.castsShadow = true
         directLight.zNear = 0
         directLight.zFar = 40
@@ -56,7 +56,7 @@ class GameScene: SCNScene {
         /////
         
         let back = SCNBox(width: 50, height: 50, length: 1, chamferRadius: 0)
-        back.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 0.7, green: 0.7, blue: 0.7, alpha: 1.0)
+        back.firstMaterial?.diffuse.contents = SCNColor(red: 0.7, green: 0.7, blue: 0.7, alpha: 1.0)
         let backNode = SCNNode(geometry: back)
         backNode.position = SCNVector3(0,0,0)
         self.rootNode.addChildNode(backNode)
@@ -64,28 +64,28 @@ class GameScene: SCNScene {
         /// Other elements
         let otherOffset = 16
         let geoA = SCNSphere(radius: 2)
-        geoA.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 1.0, green: 1.0, blue: 0.7, alpha: 1.0)
+        geoA.firstMaterial?.diffuse.contents = SCNColor(red: 1.0, green: 1.0, blue: 0.7, alpha: 1.0)
         let a = SCNNode(geometry: geoA)
         a.position = SCNVector3(-otherOffset, otherOffset, 0)
         a.categoryBitMask = 4
         self.rootNode.addChildNode(a)
 
         let geoB = SCNSphere(radius: 2)
-        geoB.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 1.0, green: 0.7, blue: 0.7, alpha: 1.0)
+        geoB.firstMaterial?.diffuse.contents = SCNColor(red: 1.0, green: 0.7, blue: 0.7, alpha: 1.0)
         let b = SCNNode(geometry: geoB)
         b.position = SCNVector3(otherOffset, otherOffset, 0)
         b.categoryBitMask = 8
         self.rootNode.addChildNode(b)
 
         let geoC = SCNSphere(radius: 2)
-        geoC.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 0.7, green: 1.0, blue: 0.7, alpha: 1.0)
+        geoC.firstMaterial?.diffuse.contents = SCNColor(red: 0.7, green: 1.0, blue: 0.7, alpha: 1.0)
         let c = SCNNode(geometry: geoC)
         c.position = SCNVector3(-otherOffset, -otherOffset, 0)
         c.categoryBitMask = 16
         self.rootNode.addChildNode(c)
         
         let geoD = SCNSphere(radius: 2)
-        geoD.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 0.7, green: 0.7, blue: 1.0, alpha: 1.0)
+        geoD.firstMaterial?.diffuse.contents = SCNColor(red: 0.7, green: 0.7, blue: 1.0, alpha: 1.0)
         let d = SCNNode(geometry: geoD)
         d.position = SCNVector3(otherOffset, -otherOffset, 0)
         d.categoryBitMask = 32
@@ -96,17 +96,17 @@ class GameScene: SCNScene {
         let object = SCNNode()
         
         let box = SCNBox(width: 10, height: 10, length: 10, chamferRadius: 0)
-        box.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 0.8, green: 0.1, blue: 0.3, alpha: 1)
+        box.firstMaterial?.diffuse.contents = SCNColor(red: 0.8, green: 0.1, blue: 0.3, alpha: 1)
         let boxNode = SCNNode(geometry: box)
         boxNode.position = SCNVector3(0,0,15)
         
         let plate = SCNBox(width: 13, height: 13, length: 2, chamferRadius: 0)
-        plate.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 0.0, green: 0.5, blue: 0.9, alpha: 1)
+        plate.firstMaterial?.diffuse.contents = SCNColor(red: 0.0, green: 0.5, blue: 0.9, alpha: 1)
         let plateNode = SCNNode(geometry: plate)
         plateNode.position = SCNVector3(0,0,10)
         
         let stick = SCNBox(width: 2, height: 15, length: 2, chamferRadius: 0)
-        stick.firstMaterial?.diffuse.contents = NSColor(calibratedRed: 1.0, green: 0.9, blue: 0.0, alpha: 1)
+        stick.firstMaterial?.diffuse.contents = SCNColor(red: 1.0, green: 0.9, blue: 0.0, alpha: 1)
         let stickNode = SCNNode(geometry: stick)
         stickNode.position = SCNVector3(0,0,20)
         
@@ -143,12 +143,10 @@ class GameScene: SCNScene {
         let spin = CABasicAnimation(keyPath: "rotation")
         // Use from-to to explicitly make a full rotation around z
         spin.fromValue = SCNVector4(x: 0, y: 0, z: 1, w: 0)
-        spin.toValue = SCNVector4(x: 0.3, y: 1, z: 1, w: CGFloat(2 * Double.pi))
+        spin.toValue = SCNVector4(x: 0.3, y: 1, z: 1, w: SCNVectorFloat(2 * Double.pi))
         spin.duration = 3
         spin.repeatCount = .infinity
         object.addAnimation(spin, forKey: "spin around")
-        
-        
     }
     
     
