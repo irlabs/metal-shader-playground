@@ -137,48 +137,48 @@
 		43BF1B122171606300B013FD /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				43BF1B1F217160C300B013FD /* draw_highlight */,
-				43BF1B26217161B900B013FD /* draw_normals */,
-				43BF1B27217161C400B013FD /* draw_masked_normals */,
-				43BF1B28217161D300B013FD /* draw_masked_position */,
+				43BF1B26217161B900B013FD /* 01_draw_normals */,
+				43BF1B27217161C400B013FD /* 02_draw_masked_normals */,
+				43BF1B28217161D300B013FD /* 03_draw_masked_position */,
+				43BF1B1F217160C300B013FD /* 04_draw_highlight */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
 		};
-		43BF1B1F217160C300B013FD /* draw_highlight */ = {
+		43BF1B1F217160C300B013FD /* 04_draw_highlight */ = {
 			isa = PBXGroup;
 			children = (
 				43BF1B2A217162E800B013FD /* draw_highlight.json */,
 				43BF1B29217162E800B013FD /* draw_highlight.metal */,
 			);
-			path = draw_highlight;
+			path = 04_draw_highlight;
 			sourceTree = "<group>";
 		};
-		43BF1B26217161B900B013FD /* draw_normals */ = {
+		43BF1B26217161B900B013FD /* 01_draw_normals */ = {
 			isa = PBXGroup;
 			children = (
 				43BF1B302171638600B013FD /* draw_normals.json */,
 				43BF1B2F2171638500B013FD /* draw_normals.metal */,
 			);
-			path = draw_normals;
+			path = 01_draw_normals;
 			sourceTree = "<group>";
 		};
-		43BF1B27217161C400B013FD /* draw_masked_normals */ = {
+		43BF1B27217161C400B013FD /* 02_draw_masked_normals */ = {
 			isa = PBXGroup;
 			children = (
 				43BF1B35217163A100B013FD /* draw_masked_normals.json */,
 				43BF1B36217163A100B013FD /* draw_masked_normals.metal */,
 			);
-			path = draw_masked_normals;
+			path = 02_draw_masked_normals;
 			sourceTree = "<group>";
 		};
-		43BF1B28217161D300B013FD /* draw_masked_position */ = {
+		43BF1B28217161D300B013FD /* 03_draw_masked_position */ = {
 			isa = PBXGroup;
 			children = (
 				43BF1B3C217163B400B013FD /* draw_masked_position.json */,
 				43BF1B3B217163B400B013FD /* draw_masked_position.metal */,
 			);
-			path = draw_masked_position;
+			path = 03_draw_masked_position;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

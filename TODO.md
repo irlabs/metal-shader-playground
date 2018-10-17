@@ -10,7 +10,7 @@
 - [ ] calculate offset and weights with http://dev.theomader.com/gaussian-kernel-calculator/ or https://github.com/manuelbua/blur-ninja
 - [ ] link to calculations
 - [ ] fix copyright headers
-- [ ] number techniques
+- [x] number techniques
 - [ ] new technique for grow shrink
 - [ ] external variable to grow and shrink the blur (subtract blur value ... )
     - [ ] test with min or fmin function (from <metal_math>)
