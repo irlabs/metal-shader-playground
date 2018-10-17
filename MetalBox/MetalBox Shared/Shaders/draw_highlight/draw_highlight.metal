@@ -83,16 +83,15 @@ fragment half4 mask_fragment() {
 // http://rastergrid.com/blog/2010/09/efficient-gaussian-blur-with-linear-sampling/
 constant float offset[] = { 0.0, 1.0, 2.0, 3.0, 4.0 };
 constant float weight[] = { 0.2270270270, 0.1945945946, 0.1216216216, 0.0540540541, 0.0162162162 };
-constant float bufferSize = 512.0;
 
 fragment half4 blur_fragment_h(VertexOut_t vert [[stage_in]],
                                texture2d<float, access::sample> maskSampler [[texture(0)]]) {
     
     float4 FragmentColor = maskSampler.sample( s, vert.uv);
     float FragmentR = FragmentColor.r * weight[0];
+    uint bufferSize = maskSampler.get_width();
     
-    
-    for (int i=1; i<5; i++) {
+    for (int i = 1; i < 5; i++) {
         FragmentR += maskSampler.sample( s, ( vert.uv + float2(offset[i], 0.0)/bufferSize ) ).r * weight[i];
         FragmentR += maskSampler.sample( s, ( vert.uv - float2(offset[i], 0.0)/bufferSize ) ).r * weight[i];
     }
@@ -105,8 +104,9 @@ fragment half4 blur_fragment_v(VertexOut_t vert [[stage_in]],
     
     float4 FragmentColor = maskSampler.sample( s, vert.uv);
     float FragmentR = FragmentColor.r * weight[0];
-    
-    for (int i=1; i<5; i++) {
+    uint bufferSize = maskSampler.get_height();
+
+    for (int i = 1; i < 5; i++) {
         FragmentR += maskSampler.sample( s, ( vert.uv + float2(0.0, offset[i])/bufferSize ) ).r * weight[i];
         FragmentR += maskSampler.sample( s, ( vert.uv - float2(0.0, offset[i])/bufferSize ) ).r * weight[i];
     }

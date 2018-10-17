@@ -5,11 +5,19 @@
 - [x] simply pass_vertex function (reuse)
 - [x] extra pass: `pass_initial_blur_h`
 - [x] 5 passes (10 total) to see effect
-- [ ] mask target as r8 or r16
+- [x] mask target as r8 or r16 (CAN'T GET THIS TO WORK)
 - [ ] blur function 17tap
 - [ ] calculate offset and weights with http://dev.theomader.com/gaussian-kernel-calculator/ or https://github.com/manuelbua/blur-ninja
+- [ ] link to calculations
+- [ ] fix copyright headers
+- [ ] number techniques
+- [ ] new technique for grow shrink
 - [ ] external variable to grow and shrink the blur (subtract blur value ... )
+    - [ ] test with min or fmin function (from <metal_math>)
 - [ ] use perfect distribution and then add extra weight
+- [ ] merge back to dev & master
+- [ ] clean up todo
+- [ ] publish
 
 ### Extra effect
 - [ ] opacity + shadow
