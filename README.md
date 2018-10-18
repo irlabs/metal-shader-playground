@@ -10,6 +10,39 @@ Another attempt to experiment with Metal shader is to make a simple _cross platf
 
 The usefulness of the iOS & macOS app, is that you can _Capture the GPU Frame_ while running in debug mode in Xcode.
 
+## Experiments
+
+#### First metal experiment: draw normals as color
+
+![draw_normals](screenshots/draw_normals.png)
+
+Use `draw_normals` technique
+
+#### Draw the normals with a mask
+
+![masked_normals](screenshots/masked_normals.png)
+
+Use `draw_masked_normals` technique
+
+#### Draw the position as color with a mask
+
+![masked_position](screenshots/masked_position.png)
+
+Use `draw_masked_position` technique. (See the note about clearing the color state to remove the above artifact)
+
+#### Draw a highlight around a shape
+
+![blurred_highlight_tap17](screenshots/blurred_highlight_tap17.png)
+
+Use `draw_highlight` technique. (The above is with a tap 17 blur and 5 repeated passes)
+
+
+
+## TODO
+
+- [ ] The shaders might be optimized by only using one channel image buffers as mask buffers. Right now the mask buffers are default 4 channel (RGBA) color buffers, but only their R (red) channel is used.
+  - (Specifically I could not get my fragment functions to output anything else then `half4`. Also the `texture2d<float>` sampler always returned a `float4`, and I could not figure out how to set the fragment arguments'  `MTLPixelFormat`)
+
 ## Notes
 
 
@@ -65,6 +98,20 @@ As an example on what happens if you don't clear the color buffer, when you're n
         "clear" : 1
     },
 ```
+
+
+#### Notes on Optimizing the Blur passes:
+
+- the technique of building an optimized blur shader is well described in this article:
+  - http://rastergrid.com/blog/2010/09/efficient-gaussian-blur-with-linear-sampling/
+- to study different algorithms and optimizations further, read this one:
+  - https://software.intel.com/en-us/blogs/2014/07/15/an-investigation-of-fast-real-time-gpu-based-image-blur-algorithms
+
+To calculate the blur `offsets` and `weights` I used this online tool:
+
+- http://dev.theomader.com/gaussian-kernel-calculator/
+  - and _Steve M_'s comment about the potential optimization
+- `blurninja` is anohter possible tool to calculate the blur offsets and weights: https://github.com/manuelbua/blur-ninja
 
 
 #### Notes on making it work Cross Platform:
