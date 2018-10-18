@@ -1,9 +1,9 @@
 //
-//  common.metal
-//  TechniqueTest
+//  draw_normals.metal
+//  MetalBox
 //
-//  Created by Volodymyr Boichentsov on 08/04/2018.
-//  Copyright © 2018 3D4Medical LLC. All rights reserved.
+//  Created by Dirk van Oosterbosch on 08/10/2018.
+//  Copyright © 2018 IRLabs. All rights reserved.
 //
 
 #include <metal_stdlib>

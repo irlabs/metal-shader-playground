@@ -20,9 +20,9 @@
             "includeCategoryMask": 2
         },
 
-        "pass_blur_h" : {
+        "pass_initial_blur" : {
             "program": "doesntexist",
-            "metalVertexShader" : "blur_vertex",
+            "metalVertexShader" : "pass_through_vertex",
             "metalFragmentShader" : "blur_fragment_h",
             "inputs" : {
                 "aPos" : "vertex_symbol",
@@ -37,9 +37,26 @@
             "draw" : "DRAW_QUAD",
         },
 
+        "pass_blur_h" : {
+            "program": "doesntexist",
+            "metalVertexShader" : "pass_through_vertex",
+            "metalFragmentShader" : "blur_fragment_h",
+            "inputs" : {
+                "aPos" : "vertex_symbol",
+                "maskSampler" : "blur_buffer",
+            },
+            "outputs" : {
+                "color" : "blur_buffer"
+            },
+            "colorStates" : {
+                "clear" : 0,
+            },
+            "draw" : "DRAW_QUAD",
+        },
+
         "pass_blur_v" : {
             "program": "doesntexist",
-            "metalVertexShader" : "blur_vertex",
+            "metalVertexShader" : "pass_through_vertex",
             "metalFragmentShader" : "blur_fragment_v",
             "inputs" : {
                 "aPos" : "vertex_symbol",
@@ -56,7 +73,7 @@
 
         "pass_combine" : {
             "program": "doesntexist",
-            "metalVertexShader" : "combine_vertex",
+            "metalVertexShader" : "pass_through_vertex",
             "metalFragmentShader" : "combine_fragment",
             "inputs" : {
                 "aPos" : "vertex_symbol",
@@ -77,10 +94,15 @@
 
     "sequence" : [
         "pass_draw_masks",
+        "pass_initial_blur",
+        "pass_blur_v",
         "pass_blur_h",
         "pass_blur_v",
+        "pass_blur_h",
         "pass_blur_v",
+        "pass_blur_h",
         "pass_blur_v",
+        "pass_blur_h",
         "pass_blur_v",
         "pass_combine"
     ],
