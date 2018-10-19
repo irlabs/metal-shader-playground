@@ -1,8 +1,8 @@
 //
-//  draw_highlight.metal
+//  draw_grow_border.metal
 //  MetalBox
 //
-//  Created by Dirk van Oosterbosch on 12/10/2018.
+//  Created by Dirk van Oosterbosch on 18/10/2018.
 //  Copyright © 2018 IRLabs. All rights reserved.
 //
 
@@ -46,13 +46,14 @@ struct SceneNode {
 };
 
 struct VariableInputs {
-    float my_variable;
+    float bloom_grow;
+    float over_blur; // no longer in use.
 };
 
 
 // -------- shared shaders
 
-vertex VertexOut_t pass_through_vertex(VertexIn_t in [[stage_in]]) {
+vertex VertexOut_t pass_through_vertex_05(VertexIn_t in [[stage_in]]) {
     
     VertexOut_t out;
     out.position = in.position;
@@ -63,7 +64,7 @@ vertex VertexOut_t pass_through_vertex(VertexIn_t in [[stage_in]]) {
 
 // -------- pass_draw_masks
 
-vertex VertexOut_t mask_vertex(VertexIn_t in [[stage_in]],
+vertex VertexOut_t mask_vertex_05(VertexIn_t in [[stage_in]],
                                constant SceneNode& scn_node [[buffer(0)]]) {
     
     VertexOut_t out;
@@ -72,7 +73,7 @@ vertex VertexOut_t mask_vertex(VertexIn_t in [[stage_in]],
 }
 
 
-fragment half4 mask_fragment() {
+fragment half4 mask_fragment_05() {
     
     return half4(1.0);
 }
@@ -86,9 +87,9 @@ fragment half4 mask_fragment() {
 //constant float weight[] = { 0.2270270270, 0.1945945946, 0.1216216216, 0.0540540541, 0.0162162162 };
 
 /* optimized tap 9 (as above, but with only 5 samples) */
-//constant int nSamples = 3;
-//constant float offset[] = { 0.0, 1.38461538, 3.23076923 };
-//constant float weight[] = { 0.2270270270, 0.31621622, 0.07027027 };
+constant int nSamples = 3;
+constant float offset[] = { 0.0, 1.38461538, 3.23076923 };
+constant float weight[] = { 0.2270270270, 0.31621622, 0.07027027 };
 
 /* tap 17 (sigma 3.0) */
 //constant int nSamples = 9;
@@ -96,36 +97,46 @@ fragment half4 mask_fragment() {
 //constant float weight[] = { 0.13298, 0.125858, 0.106701, 0.081029, 0.055119, 0.033585, 0.018331, 0.008962, 0.003924 };
 
 /* optimized tap 17 (as above, but with only 9 samples) */
-constant int nSamples = 5;
-constant float offset[] = { 0.0, 1.45881, 3.40485, 5.35309, 7.30452 };
-constant float weight[] = { 0.13298, 0.23256, 0.13615, 0.05192, 0.01289 };
+//constant int nSamples = 5;
+//constant float offset[] = { 0.0, 1.45881, 3.40485, 5.35309, 7.30452 };
+//constant float weight[] = { 0.13298, 0.23256, 0.13615, 0.05192, 0.01289 };
 
 
-fragment half4 blur_fragment_h(VertexOut_t vert [[stage_in]],
-                               texture2d<float, access::sample> maskSampler [[texture(0)]]) {
+fragment half4 blur_fragment_h_05(VertexOut_t vert [[stage_in]],
+                               texture2d<float, access::sample> maskSampler [[texture(0)]],
+                               constant VariableInputs& variablesIn [[buffer(0)]]) {
     
     float4 FragmentColor = maskSampler.sample( s, vert.uv);
     float FragmentR = FragmentColor.r * weight[0];
     uint bufferSize = maskSampler.get_width();
     
+    float o = 1.5; // variablesIn.over_blur;
+    float g = 0.3 + variablesIn.bloom_grow * 0.7;
+    float f = o * g;
+
     for (int i = 1; i < nSamples; i++) {
-        FragmentR += maskSampler.sample( s, ( vert.uv + float2(offset[i], 0.0)/bufferSize ) ).r * weight[i];
-        FragmentR += maskSampler.sample( s, ( vert.uv - float2(offset[i], 0.0)/bufferSize ) ).r * weight[i];
+        FragmentR += maskSampler.sample( s, ( vert.uv + float2(offset[i], 0.0)/bufferSize ) ).r * weight[i] * f;
+        FragmentR += maskSampler.sample( s, ( vert.uv - float2(offset[i], 0.0)/bufferSize ) ).r * weight[i] * f;
     }
     return half4(FragmentR, FragmentColor.g, FragmentColor.b, 1.0);
 }
 
 
-fragment half4 blur_fragment_v(VertexOut_t vert [[stage_in]],
-                               texture2d<float, access::sample> maskSampler [[texture(0)]]) {
+fragment half4 blur_fragment_v_05(VertexOut_t vert [[stage_in]],
+                               texture2d<float, access::sample> maskSampler [[texture(0)]],
+                               constant VariableInputs& variablesIn [[buffer(0)]]) {
     
     float4 FragmentColor = maskSampler.sample( s, vert.uv);
     float FragmentR = FragmentColor.r * weight[0];
     uint bufferSize = maskSampler.get_height();
+    
+    float o = 1.5; // variablesIn.over_blur;
+    float g = 0.3 + variablesIn.bloom_grow * 0.7;
+    float f = o * g;
 
     for (int i = 1; i < nSamples; i++) {
-        FragmentR += maskSampler.sample( s, ( vert.uv + float2(0.0, offset[i])/bufferSize ) ).r * weight[i];
-        FragmentR += maskSampler.sample( s, ( vert.uv - float2(0.0, offset[i])/bufferSize ) ).r * weight[i];
+        FragmentR += maskSampler.sample( s, ( vert.uv + float2(0.0, offset[i])/bufferSize ) ).r * weight[i] * f;
+        FragmentR += maskSampler.sample( s, ( vert.uv - float2(0.0, offset[i])/bufferSize ) ).r * weight[i] * f;
     }
     
     return half4(FragmentR, FragmentColor.g, FragmentColor.b, 1.0);
@@ -134,13 +145,11 @@ fragment half4 blur_fragment_v(VertexOut_t vert [[stage_in]],
 
 // -------- pass_combine
 
-fragment half4 combine_fragment(VertexOut_t vert [[stage_in]],
+fragment half4 combine_fragment_05(VertexOut_t vert [[stage_in]],
                                             texture2d<float, access::sample> colorSampler [[texture(0)]],
                                             texture2d<float, access::sample> maskSampler [[texture(1)]],
-                                            texture2d<float, access::sample> blurSampler [[texture(2)]],
-                                            constant VariableInputs& variablesIn [[buffer(0)]])
-{
-    
+                                            texture2d<float, access::sample> blurSampler [[texture(2)]]) {
+
     float4 FragmentColor = colorSampler.sample( s, vert.uv);
     float4 maskColor = maskSampler.sample(s, vert.uv);
     float4 blurColor = blurSampler.sample(s, vert.uv);
@@ -151,10 +160,11 @@ fragment half4 combine_fragment(VertexOut_t vert [[stage_in]],
         if ( (maskColor.r + maskColor.g + maskColor.b) < 0.01 ) {
 
             // Create (semi-transparent) white glow
-            float3 glowColor = float3(1.0, variablesIn.my_variable, variablesIn.my_variable);
+            float3 glowColor = float3(1.0);
             float alpha = blurColor.r;
             float3 out = FragmentColor.rgb * ( 1.0 - alpha ) + alpha * glowColor;
             return half4( float4(out.rgb, 1.0) );
+
         }
     }
     return half4(FragmentColor);

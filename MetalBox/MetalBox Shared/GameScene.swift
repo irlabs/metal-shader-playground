@@ -144,7 +144,7 @@ class GameScene: SCNScene {
         // Use from-to to explicitly make a full rotation around z
         spin.fromValue = SCNVector4(x: 0, y: 0, z: 1, w: 0)
         spin.toValue = SCNVector4(x: 0.3, y: 1, z: 1, w: SCNVectorFloat(2 * Double.pi))
-        spin.duration = 3
+        spin.duration = 30
         spin.repeatCount = .infinity
         object.addAnimation(spin, forKey: "spin around")
     }

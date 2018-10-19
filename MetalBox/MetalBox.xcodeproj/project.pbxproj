@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430AA0062178D82000729FA3 /* draw_grow_border.metal in Sources */ = {isa = PBXBuildFile; fileRef = 430AA0042178D78F00729FA3 /* draw_grow_border.metal */; };
+		430AA0072178D82000729FA3 /* draw_grow_border.metal in Sources */ = {isa = PBXBuildFile; fileRef = 430AA0042178D78F00729FA3 /* draw_grow_border.metal */; };
+		430AA0082178DA3100729FA3 /* draw_grow_border.json in Resources */ = {isa = PBXBuildFile; fileRef = 430AA0052178D79000729FA3 /* draw_grow_border.json */; };
+		430AA0092178DA3200729FA3 /* draw_grow_border.json in Resources */ = {isa = PBXBuildFile; fileRef = 430AA0052178D79000729FA3 /* draw_grow_border.json */; };
 		43BF1AE92171569E00B013FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1AE82171569E00B013FD /* AppDelegate.swift */; };
 		43BF1AEB2171569E00B013FD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BF1AEA2171569E00B013FD /* GameViewController.swift */; };
 		43BF1AEE2171569E00B013FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BF1AEC2171569E00B013FD /* Main.storyboard */; };
@@ -39,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		430AA0042178D78F00729FA3 /* draw_grow_border.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = draw_grow_border.metal; sourceTree = "<group>"; };
+		430AA0052178D79000729FA3 /* draw_grow_border.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = draw_grow_border.json; sourceTree = "<group>"; };
 		43BF1ADE2171569D00B013FD /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		43BF1AE02171569E00B013FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43BF1AE52171569E00B013FD /* MetalBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		430AA0032178D77000729FA3 /* 05_draw_grow_border */ = {
+			isa = PBXGroup;
+			children = (
+				430AA0052178D79000729FA3 /* draw_grow_border.json */,
+				430AA0042178D78F00729FA3 /* draw_grow_border.metal */,
+			);
+			path = 05_draw_grow_border;
+			sourceTree = "<group>";
+		};
 		43BF1AD82171569D00B013FD = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +156,7 @@
 				43BF1B27217161C400B013FD /* 02_draw_masked_normals */,
 				43BF1B28217161D300B013FD /* 03_draw_masked_position */,
 				43BF1B1F217160C300B013FD /* 04_draw_highlight */,
+				430AA0032178D77000729FA3 /* 05_draw_grow_border */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
@@ -266,6 +282,7 @@
 				43BF1AEE2171569E00B013FD /* Main.storyboard in Resources */,
 				43BF1B37217163A100B013FD /* draw_masked_normals.json in Resources */,
 				43BF1AF12171569E00B013FD /* LaunchScreen.storyboard in Resources */,
+				430AA0082178DA3100729FA3 /* draw_grow_border.json in Resources */,
 				43BF1B052171569E00B013FD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,12 +291,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43BF1B38217163A100B013FD /* draw_masked_normals.json in Resources */,
 				43BF1AFF2171569E00B013FD /* Main.storyboard in Resources */,
 				43BF1B062171569E00B013FD /* Assets.xcassets in Resources */,
 				43BF1B322171639300B013FD /* draw_normals.json in Resources */,
 				43BF1B2E217162E800B013FD /* draw_highlight.json in Resources */,
 				43BF1B40217163B400B013FD /* draw_masked_position.json in Resources */,
+				43BF1B38217163A100B013FD /* draw_masked_normals.json in Resources */,
+				430AA0092178DA3200729FA3 /* draw_grow_border.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +314,7 @@
 				43BF1B012171569E00B013FD /* GameController.swift in Sources */,
 				43BF1B102171597600B013FD /* GameScene.swift in Sources */,
 				43BF1B2B217162E800B013FD /* draw_highlight.metal in Sources */,
+				430AA0062178D82000729FA3 /* draw_grow_border.metal in Sources */,
 				43BF1AE92171569E00B013FD /* AppDelegate.swift in Sources */,
 				43BF1B39217163A100B013FD /* draw_masked_normals.metal in Sources */,
 			);
@@ -311,6 +330,7 @@
 				43BF1B022171569E00B013FD /* GameController.swift in Sources */,
 				43BF1B112171597600B013FD /* GameScene.swift in Sources */,
 				43BF1B2C217162E800B013FD /* draw_highlight.metal in Sources */,
+				430AA0072178D82000729FA3 /* draw_grow_border.metal in Sources */,
 				43BF1AFA2171569E00B013FD /* AppDelegate.swift in Sources */,
 				43BF1B3A217163A100B013FD /* draw_masked_normals.metal in Sources */,
 			);

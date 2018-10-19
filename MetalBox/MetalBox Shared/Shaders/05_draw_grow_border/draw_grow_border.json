@@ -1,0 +1,134 @@
+{
+    "passes" : {
+
+        "pass_draw_masks" : {
+            "metalVertexShader" : "mask_vertex_05",
+            "metalFragmentShader" : "mask_fragment_05",
+            "inputs" : {
+                "aPos" : "vertex_symbol"
+            },
+            "outputs" : {
+                "color" : "mask_buffer"
+            },
+            "colorStates" : {
+                "clear" : 1
+            },
+            "depthStates" : {
+                "clear" : 1
+            },
+            "draw" : "DRAW_SCENE",
+            "includeCategoryMask": 2
+        },
+
+        "pass_initial_blur" : {
+            "program": "doesntexist",
+            "metalVertexShader" : "pass_through_vertex_05",
+            "metalFragmentShader" : "blur_fragment_h_05",
+            "inputs" : {
+                "aPos" : "vertex_symbol",
+                "maskSampler" : "mask_buffer",
+                "bloom_grow" : "bloom_grow_symbol",
+                "over_blur" : "over_blur_symbol",
+            },
+            "outputs" : {
+                "color" : "blur_buffer"
+            },
+            "colorStates" : {
+                "clear" : 0,
+            },
+            "draw" : "DRAW_QUAD",
+        },
+
+        "pass_blur_h" : {
+            "program": "doesntexist",
+            "metalVertexShader" : "pass_through_vertex_05",
+            "metalFragmentShader" : "blur_fragment_h_05",
+            "inputs" : {
+                "aPos" : "vertex_symbol",
+                "maskSampler" : "blur_buffer",
+                "bloom_grow" : "bloom_grow_symbol",
+                "over_blur" : "over_blur_symbol",
+            },
+            "outputs" : {
+                "color" : "blur_buffer"
+            },
+            "colorStates" : {
+                "clear" : 0,
+            },
+            "draw" : "DRAW_QUAD",
+        },
+
+        "pass_blur_v" : {
+            "program": "doesntexist",
+            "metalVertexShader" : "pass_through_vertex_05",
+            "metalFragmentShader" : "blur_fragment_v_05",
+            "inputs" : {
+                "aPos" : "vertex_symbol",
+                "maskSampler" : "blur_buffer",
+                "bloom_grow" : "bloom_grow_symbol",
+                "over_blur" : "over_blur_symbol",
+            },
+            "outputs" : {
+                "color" : "blur_buffer"
+            },
+            "colorStates" : {
+                "clear" : 0,
+            },
+            "draw" : "DRAW_QUAD",
+        },
+
+        "pass_combine" : {
+            "program": "doesntexist",
+            "metalVertexShader" : "pass_through_vertex_05",
+            "metalFragmentShader" : "combine_fragment_05",
+            "inputs" : {
+                "aPos" : "vertex_symbol",
+                "colorSampler": "COLOR",
+                "maskSampler" : "mask_buffer",
+                "blurSampler" : "blur_buffer",
+                "bloom_grow" : "bloom_grow_symbol",
+            },
+            "outputs" : {
+                "color" : "COLOR"
+            },
+            "colorStates" : {
+                "clear" : 0,
+            },
+            "draw" : "DRAW_QUAD",
+        }
+    },
+
+    "sequence" : [
+        "pass_draw_masks",
+        "pass_initial_blur",
+        "pass_blur_v",
+        "pass_blur_h",
+        "pass_blur_v",
+        "pass_blur_h",
+        "pass_blur_v",
+        "pass_blur_h",
+        "pass_blur_v",
+        "pass_combine"
+    ],
+
+    "targets" : {
+        "mask_buffer" : {
+            "type" : "color"
+        },
+        "blur_buffer" : {
+            "type" : "color"
+        }
+    },
+
+    "symbols" : {
+        "vertex_symbol" : {
+            "semantic" : "vertex"
+        },
+        "bloom_grow_symbol" : {
+            "type" : "float"
+        },
+        "over_blur_symbol" : {
+            "type" : "float"
+        },
+    }
+}

@@ -28,7 +28,7 @@ Use `draw_masked_normals` technique
 
 ![masked_position](screenshots/masked_position.png)
 
-Use `draw_masked_position` technique. (See the note about clearing the color state to remove the above artifact)
+Use `draw_masked_position` technique. (See the [note about clearing the color state](#notes-on-clearing-of-the-color-state) to remove the above artifact)
 
 #### Draw a highlight around a shape
 
