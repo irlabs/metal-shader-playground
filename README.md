@@ -36,6 +36,12 @@ Use `draw_masked_position` technique. (See the [note about clearing the color st
 
 Use `draw_highlight` technique. (The above is with a tap 17 blur and 5 repeated passes)
 
+#### Draw a thicker border around  the shape
+
+![bloom_border](screenshots/bloom_border.png)
+
+Use `draw_grow_border` technique. (Optimized version of the previous shader, specifically for this bloom-border effect)
+
 
 
 ## TODO
