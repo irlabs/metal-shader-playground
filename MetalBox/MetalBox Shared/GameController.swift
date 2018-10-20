@@ -54,8 +54,12 @@ class GameController: NSObject, SCNSceneRendererDelegate {
             // set draw_masked_position SCNTechnique
             //        setTechnique(name: "draw_masked_position", in: scnView)
             
-            // draw_highlight (blur)
-            setTechnique(name: "draw_highlight", in: scnView)
+            // set draw_highlight (blur) SCNTechnique
+            //        setTechnique(name: "draw_highlight", in: scnView)
+            
+            // set draw_grow_border (bloom border) SCNTechnique
+            setTechnique(name: "draw_grow_border", in: scnView)
+
         }
     }
     
@@ -161,11 +165,40 @@ class GameController: NSObject, SCNSceneRendererDelegate {
         // Called before each frame is rendered
         if let technique = technique {
             
-            // Saw tooth animation for 2 seconds
-            var t = time.truncatingRemainder(dividingBy: 2)
-            if t > 1 { t = 2 - t }
-            
-            technique.setObject(NSNumber(value: t), forKeyedSubscript: NSString(string: "my_variable_symbol"))
+            if let symbols: [String : Any] = technique.dictionaryRepresentation["symbols"] as? [String : Any] {
+                
+                // Variables for:  draw_highlight
+                if symbols.keys.contains("my_variable_symbol") {
+                    // Saw tooth animation for 2 seconds
+                    var t = time.truncatingRemainder(dividingBy: 2)
+                    if t > 1 { t = 2 - t }
+                    
+                    technique.setObject(NSNumber(value: t), forKeyedSubscript: NSString(string: "my_variable_symbol"))
+                }
+                
+                // Variables for:  draw_grow_border
+                //  - bloom_grow
+                //  - over_blur (Unsused. Found desired over blur value (1.5) and hard coded that in)
+                if symbols.keys.contains("over_blur_symbol") {
+                    // Saw tooth animation for 10 seconds
+                    var t = time.truncatingRemainder(dividingBy: 20)
+                    if t > 10 { t = 20 - t }
+
+                    let over_blur: Float = 1.0 + Float(t * 0.05)
+                    technique.setObject(NSNumber(value: over_blur), forKeyedSubscript: NSString(string: "over_blur_symbol"))
+                }
+                if symbols.keys.contains("bloom_grow_symbol") {
+                    
+                    // Clamped saw tooth animation for 4 seconds:
+                    //  - ramp up 1 second, - hold on 1 for 1 second, - ramp down 1 second, hold on 0 for 1 second
+                    var t = time.truncatingRemainder(dividingBy: 4)
+                    if t > 1 && t < 2 { t = 1 }             // hold on 1
+                    else if t >= 2 && t < 3 { t = 3 - t }   // ramp down
+                    else if t >= 3 { t = 0 }                // hold on 0
+
+                    technique.setObject(NSNumber(value: t), forKeyedSubscript: NSString(string: "bloom_grow_symbol"))
+                }
+            }
         }
     }
 

@@ -1,10 +1,12 @@
 # metal-shader-playground
 
-### Attempt to build a simple Xcode Playground to experiment with Metal shaders
+### First Attempt: build a simple Xcode Playground to experiment with Metal shaders
 
 Metal shaders in a playground do work, but are not so useful as we would hope. This is because the shader definition and shader code (`.metal`) have to be added to the _Resources_ in order to work. That means they will not be automatically / live be recompiled. ... At least that doesn't work as smooth as expected.
 
-Another attempt to experiment with Metal shader is to make a simple _cross platform_ (iOS + macOS) app, **MetalBox**, and to run that in debugger mode. It needs to run on a real device, so the development machine on macOS, and an actual iPhone or iPad on iOS, because the iOS Simulator cannot simulate metal.
+### Second Attempt: a cross platform experiment app
+
+Another attempt to experiment with Metal shader is to make a simple _cross platform_ (iOS + macOS) app, **MetalBox**, and to run that in debugger mode. It needs to run on a real device, so for macOS that can be the development machine itself, and for iOS this needs to be an actual iPhone or iPad, because the iOS Simulator cannot simulate metal.
 
 ### MetalBox debugging
 
@@ -16,25 +18,31 @@ The usefulness of the iOS & macOS app, is that you can _Capture the GPU Frame_ w
 
 ![draw_normals](screenshots/draw_normals.png)
 
-Use `draw_normals` technique
+Use the `draw_normals` technique
 
 #### Draw the normals with a mask
 
 ![masked_normals](screenshots/masked_normals.png)
 
-Use `draw_masked_normals` technique
+Use the `draw_masked_normals` technique
 
 #### Draw the position as color with a mask
 
 ![masked_position](screenshots/masked_position.png)
 
-Use `draw_masked_position` technique. (See the note about clearing the color state to remove the above artifact)
+Use the `draw_masked_position` technique. (See the [note about clearing the color state](#notes-on-clearing-of-the-color-state) to remove the above artifact)
 
 #### Draw a highlight around a shape
 
 ![blurred_highlight_tap17](screenshots/blurred_highlight_tap17.png)
 
-Use `draw_highlight` technique. (The above is with a tap 17 blur and 5 repeated passes)
+Use the `draw_highlight` technique. (The above is with a tap 17 blur and 5 repeated passes)
+
+#### Draw a thicker border around  the shape
+
+![bloom_border](screenshots/bloom_border.png)
+
+Use the `draw_grow_border` technique. (Optimized version of the previous shader, specifically for this bloom-border effect)
 
 
 
